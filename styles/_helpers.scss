@@ -1,0 +1,24 @@
+@import "colors";
+
+body {
+    background-color: $background;
+    color: $foreground;
+}
+
+.colors-dark {
+    color: $secondary;
+    background-color: $foreground;
+}
+
+.colors-green {
+    color: $background;
+    background-color: $accent-green;
+}
+
+.colors-yellow {
+    background-color: $accent-yellow;
+}
+
+.colors-biege {
+    background-color: $secondary;
+}

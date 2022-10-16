@@ -1,1 +1,119 @@
-body{background-color:#e1ede5;color:#2d353b}.colors-dark{color:#929076;background-color:#2d353b}.colors-green{color:#e1ede5;background-color:#316a63}.colors-yellow{background-color:#f4ce6d}.colors-biege{color:#fff;background-color:#929076}a{color:#316a63}a:hover{color:#52afa4}body{font-family:"Nunito Sans",sans-serif}h1{font-family:"Cormorant Garamond",serif}.logo img{display:inline-block;width:160px}header nav li{padding:.5rem 1rem}header nav .menu-item a{font-size:1rem}
+body {
+  background-color: #f5f5f5;
+  color: #2d353b;
+}
+
+.colors-dark {
+  color: #929076;
+  background-color: #2d353b;
+}
+
+.colors-green {
+  color: #f5f5f5;
+  background-color: #316A63;
+}
+
+.colors-yellow {
+  background-color: #f4ce6d;
+}
+
+.colors-biege {
+  color: #f5f5f5;
+  background-color: #929076;
+}
+
+a {
+  color: #316A63;
+}
+a:hover {
+  color: #52afa4;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.logo-fill {
+  fill: #2d353b;
+}
+
+header.header {
+  position: relative;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-height: 4.5rem;
+  background-image: url("../images/bg-header.jpg");
+  background-position: 0 0;
+  background-repeat: repeat-y;
+  margin-bottom: 0;
+}
+header.header nav {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  font-family: "Cormorant Garamond", serif;
+}
+header.header nav .nav-item {
+  padding: 0 0.75rem;
+}
+header.header nav .nav-item a {
+  padding-bottom: 0;
+}
+header.header nav.active {
+  padding-top: 2rem;
+}
+@media screen and (max-width: 768px) {
+  header.header nav::-webkit-scrollbar {
+    width: 0;
+  }
+  header.header nav .nav-item a {
+    justify-content: center;
+  }
+}
+header.header #header-btn {
+  margin-left: 0;
+}
+header.header .z-lifter {
+  z-index: 2;
+}
+header.header .logo-place {
+  min-width: 10.45rem;
+}
+header.header .logo {
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-top: 0.5rem;
+  height: 4.5rem;
+  position: absolute;
+  text-align: center;
+}
+header.header .logo svg {
+  width: 9.5rem;
+  display: inline-block;
+}
+header.header .logo .title {
+  left: 50%;
+  bottom: 0.125rem;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 9.5rem;
+}
+header.header .logo .title .top {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: "Nunito Sans", sans-serif;
+}
+header.header .logo .title .bottom {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}/*# sourceMappingURL=styles.css.map */

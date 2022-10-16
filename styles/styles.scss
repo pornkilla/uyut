@@ -1,34 +1,111 @@
 @import 'helpers';
 @import 'fonts';
 
+
+$header-height: 4.5rem;
+$header-logo-width: 9.5rem;
+
+@mixin abs-box {
+  top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
 a {
-    color: $accent-green;
-    &:hover {
-        color: lighten($accent-green, 20);
-    }
+  color: $accent-green;
+
+  &:hover {
+    color: lighten($accent-green, 20);
+  }
 }
 
 body {
-    font-family: $font-nunito;
+  font-family: $font-nunito;
+  background-color: $background;
 }
 
 h1 {
-    font-family: $font-cormorant;
+  font-family: $font-cormorant;
 }
 
-.logo {
-    img {
-        display: inline-block;
-        width: 160px;
-    }
+.logo-fill {
+  fill: $foreground;
 }
-header {
-    nav {
-        li {
-            padding: 0.5rem 1rem;
-        }
-        .menu-item a {
-            font-size: 1rem;
-        }
+
+header.header {
+  position: relative;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-height: $header-height;
+  background-image: url('../images/bg-header.jpg');
+  background-position: 0 0;
+  background-repeat: repeat-y;
+  margin-bottom: 0;
+  nav {
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    font-family: $font-cormorant;
+    .nav-item {
+      padding: 0 0.75rem;
+      a {
+        padding-bottom: 0;
+      }
     }
+    &.active {
+      padding-top: 2rem;
+    }
+    @media screen and (max-width: 768px) {
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      .nav-item a {
+        justify-content: center;
+      }
+    }
+  }
+  #header-btn {
+    margin-left: 0;
+  }
+  .z-lifter {
+    z-index: 2;
+  }
+  .logo-place {
+    min-width: $header-logo-width + $header-logo-width * 0.1;
+  }
+  .logo {
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-top: 0.5rem;
+    height: $header-height;
+    position: absolute;
+    text-align: center;
+    svg {
+      width: $header-logo-width;
+      display: inline-block;
+    }
+    .title {
+      left: 50%;
+      bottom: 0.125rem;
+      transform: translateX(-50%);
+      position: absolute;
+      width: $header-logo-width;
+      .top {
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: 1;
+        font-family: $font-nunito;
+      }
+      .bottom {
+        font-family: $font-cormorant;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
 }

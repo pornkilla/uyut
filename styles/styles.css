@@ -7,6 +7,12 @@ body {
   color: #929076;
   background-color: #2d353b;
 }
+.colors-dark a {
+  color: #f5f5f5;
+}
+.colors-dark a:hover {
+  color: #f4ce6d;
+}
 
 .colors-green {
   color: #f5f5f5;
@@ -27,6 +33,10 @@ a {
 }
 a:hover {
   color: #52afa4;
+}
+
+:focus {
+  box-shadow: rgba(49, 106, 99, 0.25) 0 0 2px 3px;
 }
 
 body {
@@ -116,4 +126,96 @@ header.header .logo .title .bottom {
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.1em;
+}
+
+footer.footer {
+  margin-top: 0;
+  position: relative;
+  padding-bottom: 2rem;
+  background-image: url("../images/footer-fleur.svg");
+  background-position: 30% 110%;
+  background-repeat: no-repeat;
+  background-size: auto 75%;
+}
+footer.footer ul {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+footer.footer .logo {
+  color: #f4ce6d;
+  left: 0;
+  right: 0;
+  top: 2rem;
+  padding-top: 0.5rem;
+  height: 4.5rem;
+  position: absolute;
+  text-align: center;
+}
+footer.footer .logo svg {
+  width: 9.5rem;
+  display: inline-block;
+}
+footer.footer .logo .title {
+  left: 50%;
+  bottom: 0.125rem;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 9.5rem;
+}
+footer.footer .logo .title .top {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: "Nunito Sans", sans-serif;
+}
+footer.footer .logo .title .bottom {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+footer.footer .logo-fill {
+  fill: #929076;
+}
+footer.footer .content {
+  max-width: 1200px;
+}
+footer.footer .menu {
+  margin-bottom: 2rem;
+}
+footer.footer .menu .list-item a {
+  display: block;
+  font-weight: 200;
+  padding: 0.75rem 0;
+}
+@media screen and (min-width: 768px) {
+  footer.footer .menu .list-item {
+    text-align: left;
+  }
+}
+footer.footer .menu.tight {
+  font-size: 0.75rem;
+}
+footer.footer .menu.tight a {
+  padding: 0.25rem 0;
+  font-weight: 400;
+}
+footer.footer .copyright {
+  font-size: 0.75rem;
+}
+footer.footer .copyright div {
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  footer.footer .copyright div {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer.footer .pay-icons {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

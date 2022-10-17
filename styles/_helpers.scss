@@ -1,25 +1,32 @@
 @import "colors";
 
 body {
-    background-color: $background;
-    color: $foreground;
+  background-color: $background;
+  color: $foreground;
 }
 
 .colors-dark {
-    color: $secondary;
-    background-color: $foreground;
+  color: $secondary;
+  background-color: $foreground;
+
+  a {
+    color: $background;
+    &:hover {
+      color: $accent-yellow;
+    }
+  }  
 }
 
 .colors-green {
-    color: $background;
-    background-color: $accent-green;
+  color: $background;
+  background-color: $accent-green;
 }
 
 .colors-yellow {
-    background-color: $accent-yellow;
+  background-color: $accent-yellow;
 }
 
 .colors-biege {
-    color: $background;
-    background-color: $secondary;
+  color: $background;
+  background-color: $secondary;
 }

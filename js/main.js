@@ -1,14 +1,25 @@
-// Get all the nav-btns in the page
-let navBtns = document.querySelectorAll('.nav-btn');
+function serveHeaderNavigation() {
+    let navBtns = document.querySelectorAll('.nav-btn');
 
-// Add an event handler for all nav-btns to enable the dropdown functionality
-navBtns.forEach(function (ele) {
-    ele.addEventListener('click', function() {
-        // Get the dropdown-menu associated with this nav button (insert the id of your menu)
-        let dropDownMenu = document.getElementById('header-menu');
-
-        // Toggle the nav-btn and the dropdown menu
-        ele.classList.toggle('active');
-        dropDownMenu.classList.toggle('active');
+    navBtns.forEach(function (el) {
+        el.addEventListener('click', function() {
+          
+            let dropDownMenu = document.getElementById('header-menu');
+    
+            el.classList.toggle('active');
+            dropDownMenu.classList.toggle('active');
+        });
     });
-});
+}
+
+function displayCurrentYear() {
+    let currentYear = new Date().getFullYear();
+    let content = document.querySelector("#currentyear").insertAdjacentHTML('afterbegin', currentYear);
+    return content;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    serveHeaderNavigation();
+    displayCurrentYear();
+    
+}, false);

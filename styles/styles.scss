@@ -1,7 +1,6 @@
 @import 'helpers';
 @import 'fonts';
 
-
 $header-height: 4.5rem;
 $header-logo-width: 9.5rem;
 
@@ -13,12 +12,50 @@ $header-logo-width: 9.5rem;
     position: absolute;
 }
 
+@mixin logo($top-position) {
+  left: 0;
+  right: 0;
+  top: $top-position;
+  padding-top: 0.5rem;
+  height: $header-height;
+  position: absolute;
+  text-align: center;
+  svg {
+    width: $header-logo-width;
+    display: inline-block;
+  }
+  .title {
+    left: 50%;
+    bottom: 0.125rem;
+    transform: translateX(-50%);
+    position: absolute;
+    width: $header-logo-width;
+    .top {
+      font-size: 0.75rem;
+      font-weight: 400;
+      line-height: 1;
+      font-family: $font-nunito;
+    }
+    .bottom {
+      font-family: $font-cormorant;
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0.1em;
+    }
+  }
+}
+
 a {
   color: $accent-green;
 
   &:hover {
     color: lighten($accent-green, 20);
   }
+}
+
+:focus {
+  box-shadow: rgba($accent-green, 0.25) 0 0 2px 3px;
 }
 
 body {
@@ -76,36 +113,65 @@ header.header {
   }
   .logo {
     z-index: 1;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding-top: 0.5rem;
-    height: $header-height;
-    position: absolute;
-    text-align: center;
-    svg {
-      width: $header-logo-width;
-      display: inline-block;
+    @include logo(0);    
+  }
+}
+
+footer.footer {
+  margin-top: 0;
+  position: relative;
+  padding-bottom: 2rem;
+  background-image: url('../images/footer-fleur.svg');
+  background-position: 30% 110%;
+  background-repeat: no-repeat;
+  background-size: auto 75%;
+  ul {
+    padding-inline-start: 0;
+  }
+  .logo {
+    color: $accent-yellow;
+    @include logo(2rem);
+  }
+  .logo-fill {
+    fill: $secondary;
+  }
+  .content {
+    max-width: 1200px;
+  }
+  .menu {
+    margin-bottom: 2rem;
+    .list-item {
+      a {
+        display: block;
+        font-weight: 200;
+        padding: 0.75rem 0;
+      }      
+      @media screen and (min-width: 768px) {
+        text-align: left;
+      }
     }
-    .title {
-      left: 50%;
-      bottom: 0.125rem;
-      transform: translateX(-50%);
-      position: absolute;
-      width: $header-logo-width;
-      .top {
-        font-size: 0.75rem;
+    &.tight {
+      font-size: 0.75rem;
+      a {
+        padding: 0.25rem 0;
         font-weight: 400;
-        line-height: 1;
-        font-family: $font-nunito;
       }
-      .bottom {
-        font-family: $font-cormorant;
-        font-size: 1.5rem;
-        font-weight: 600;
-        line-height: 1;
-        letter-spacing: 0.1em;
+    }
+  }
+  .copyright {    
+    font-size: 0.75rem;
+    div {
+      margin: 0 auto;
+      @media screen and (min-width: 768px) {
+        margin-left: 0;
+        margin-right: auto;
       }
+    }    
+  }
+  .pay-icons {
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+      margin-bottom: 1rem;
     }
   }
 }

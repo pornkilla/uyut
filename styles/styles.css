@@ -48,6 +48,11 @@ h1 {
   font-family: "Cormorant Garamond", serif;
 }
 
+h1, h2 {
+  font-variant: small-caps;
+  font-weight: 400;
+}
+
 .logo-fill {
   fill: #2d353b;
 }

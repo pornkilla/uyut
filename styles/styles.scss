@@ -67,6 +67,11 @@ h1 {
   font-family: $font-cormorant;
 }
 
+h1, h2 {
+  font-variant: small-caps;
+  font-weight: 400;
+}
+
 .logo-fill {
   fill: $foreground;
 }

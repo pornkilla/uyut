@@ -31,6 +31,7 @@ function displayCurrentYear() {
 
 function prepareYandexMap() {
   ymaps.ready(init);
+
   function init() {
     var myMap = new ymaps.Map("map", {
       center: [61.785954534328, 34.312319323417],
@@ -39,17 +40,16 @@ function prepareYandexMap() {
 
     var myCollection = new ymaps.GeoObjectCollection();
 
-    myCollection.add(new ymaps.Placemark([61.785954534328, 34.312319323417],
-      {
-        balloonContentHeader: '<strong>Гостиница УЮТ г. Петрозаводск </strong>',
-        balloonContentBody: 'г. Петрозаводск, ул. Крылова 6, Россия, Карелия',
-      },
-      {
-        preset: 'islands#icon',
-        iconColor: '#316A63'
-      }));
+    myCollection.add(new ymaps.Placemark([61.785954534328, 34.312319323417], {
+      balloonContentHeader: '<strong>Гостиница УЮТ г. Петрозаводск </strong>',
+      balloonContentBody: 'г. Петрозаводск, ул. Крылова 6, Россия, Карелия',
+    }, {
+      preset: 'islands#icon',
+      iconColor: '#316A63'
+    }));
 
     myMap.geoObjects.add(myCollection);
+    myMap.behaviors.disable('scrollZoom');
     myMap.controls.remove('searchControl');
     myMap.controls.remove('trafficControl');
     myMap.controls.remove('typeSelector');

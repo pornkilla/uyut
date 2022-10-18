@@ -59,6 +59,7 @@ a {
 }
 
 body {
+  position: relative;
   font-family: $font-nunito;
   background-color: $background;
 }
@@ -70,6 +71,7 @@ h1 {
 h1, h2 {
   font-variant: small-caps;
   font-weight: 400;
+  font-family: $font-cormorant;
 }
 
 .logo-fill {

@@ -20,6 +20,12 @@ body {
 .colors-green {
   color: $background;
   background-color: $accent-green;
+  a {
+    color: $accent-yellow;
+    &:hover {
+      color: $background;
+    }
+  }
 }
 
 .colors-yellow {

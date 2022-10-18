@@ -17,6 +17,7 @@
 </head>
 
 <body>
+  <div class="overhead colors-biege"></div>
   <header class="header header-animated">
 
     <div class="logo">
@@ -77,11 +78,6 @@
         <p class="py-8">light test</p>
       </div>
     </section>
-    <section class="colors-green u-flex u-justify-center u-items-center h-100p w-100p">
-      <div class="content w-80p">
-        <p class="py-8">green test</p>
-      </div>
-    </section>
     <section class="colors-biege u-flex u-justify-center u-items-center h-100p w-100p">
       <div class="content w-80p">
         <p class="py-8">biege test</p>
@@ -90,6 +86,48 @@
     <section class="colors-yellow u-flex u-justify-center u-items-center h-100p w-100p">
       <div class="content w-80p">
         <p class="py-8">yellow test</p>
+      </div>
+    </section>
+    <section class="colors-green">
+      <div class="u-flex u-relative">
+        <div class="w-40p">
+          <div class="address-box content">
+            <p class="text-sm">осталось лишь только узнать</p>
+            <h2>Как нас найти</h2>
+            
+
+
+            
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-8">
+                <p class="text-xl m-0">8 (905) 299-90-80</p>
+                <p class="text-sm">Круглосуточно</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-8"><a href="mailto:89052999080@mail.ru">89052999080@mail.ru</a></div>
+            </div>
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-8">
+                <p>Республика Карелия,<br>
+                <p>г. Петрозаводск, ул. Крылова 6</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-8">61.785954534328, 34.312319323417</div>
+            </div>
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-8"><a href="">В Контакте</a></div>
+            </div>
+            
+          </div>
+        </div>
+        <div id="map" class="u-flex-grow-1" style="height: 720px"></div>
       </div>
     </section>
   </main>
@@ -168,7 +206,13 @@
     </div>
 
   </footer>
+
+  <div class="toast u-fixed u-bottom-0 colors-green w-auto">
+    <button class="btn-close"></button>
+    <p class="text-xs w-90p">Мы используем файлы cookie, разработанные нашими специалистами и третьими лицами, для анализа событий на нашем веб-сайте, что позволяет нам улучшать взаимодействие с пользователями и обслуживание. Продолжая просмотр страниц нашего сайта, вы принимаете условия его использования. Более подробные сведения смотрите в нашей <a href="#">Политике в отношении файлов Cookie</a>.</p>
+  </div>
   <script src="js/main.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU" type="text/javascript"></script>
   <script src="js/tiny-slider.js"></script>
 </body>
 

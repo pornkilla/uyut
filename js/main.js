@@ -18,7 +18,9 @@ function serveCloseButtons() {
   closeBtns.forEach(function (el) {
     el.addEventListener('click', function () {
       let parent = el.parentNode;
-      parent.classList.add('u-none');
+      if (parent.getAttribute('data-target') === 'close') {
+        parent.classList.add('u-none');
+      }
     });
   });
 }

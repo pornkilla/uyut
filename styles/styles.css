@@ -34,6 +34,10 @@ body {
   background-color: #929076;
 }
 
+body {
+  position: relative;
+}
+
 a {
   color: #316A63;
 }
@@ -47,10 +51,6 @@ a:hover {
 
 p {
   line-height: 1.47;
-}
-
-body {
-  position: relative;
 }
 
 h1 {
@@ -72,9 +72,14 @@ h2 {
 }
 
 h1, h2 {
-  font-variant: small-caps;
   font-weight: 400;
+  line-height: 1;
+  font-variant: small-caps;
   font-family: "Cormorant Garamond", serif;
+}
+
+section p, section a {
+  font-weight: 200;
 }
 
 .logo-fill {
@@ -112,9 +117,6 @@ header.header nav.active {
   header.header nav .nav-item a {
     justify-content: center;
   }
-}
-header.header #header-btn {
-  margin-left: 0;
 }
 header.header .z-lifter {
   z-index: 2;
@@ -249,6 +251,25 @@ footer.footer .copyright div {
   }
 }
 
+.line-title {
+  padding-left: 58px;
+  position: relative;
+}
+.line-title::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  border-top: 1px solid #f5f5f5;
+  height: 1px;
+  width: 50px;
+  left: 0;
+  top: 50%;
+}
+
+#header-btn {
+  margin-left: 0;
+}
+
 #contacts .address-box {
   margin: 0 2rem;
 }
@@ -259,23 +280,35 @@ footer.footer .copyright div {
   }
 }
 #contacts .address-box p {
-  margin-bottom: 2rem;
+  margin: 1rem 0;
+}
+#contacts .phone {
+  font-size: 1.375rem;
+  font-weight: 600;
 }
 #contacts .icon {
-  margin-right: 2rem;
+  width: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 1rem;
+}
+#contacts .icon + div {
+  margin-left: 1.5rem;
+}
+#contacts .icon svg {
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 1.5rem;
+}
+#contacts .icon svg path {
+  fill: #f5f5f5;
 }
 
-.line-title {
-  padding-left: 78px;
-  position: relative;
+#map {
+  height: 100%;
 }
-.line-title::before {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  border-top: 1px solid #f5f5f5;
-  height: 1px;
-  width: 70px;
-  left: 0;
-  top: 50%;
+
+#cookie-disclaimer p {
+  line-height: 1.25;
+  font-size: 0.875rem;
+  font-weight: 200;
 }/*# sourceMappingURL=styles.css.map */

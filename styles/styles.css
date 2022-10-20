@@ -294,6 +294,9 @@ footer.footer .copyright div {
 .slider-box button[data-action=start] {
   display: none;
 }
+.slider-box a {
+  padding: 0;
+}
 .slider-box .slider-controls button {
   padding: 1rem;
   display: flex;
@@ -339,19 +342,19 @@ footer.footer .copyright div {
   fill: #2d353b;
 }
 .slider-box .tns-nav {
-  margin-top: 1rem;
   display: flex;
+  margin-top: 1rem;
   min-height: 1rem;
   align-items: center;
   justify-content: center;
 }
 .slider-box .tns-nav button {
+  padding: 0;
   width: 0.5rem;
   height: 0.5rem;
-  padding: 0;
+  margin: 0 0.5rem;
   border-radius: 50%;
   min-width: initial;
-  margin: 0 0.5rem;
   transition: all ease 0.15;
   background-color: rgba(146, 144, 118, 0.5);
 }
@@ -359,6 +362,18 @@ footer.footer .copyright div {
   width: 0.875rem;
   height: 0.875rem;
   background-color: #316A63;
+}
+
+@media screen and (max-width: 768px) {
+  .slbCaption {
+    font-size: 0.75rem;
+  }
+}
+
+.slbCloseBtn:hover,
+.slbArrow:hover {
+  color: #f4ce6d;
+  opacity: 1;
 }
 
 #contacts .address-box {

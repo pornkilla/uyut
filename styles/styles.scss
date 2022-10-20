@@ -246,6 +246,9 @@ footer.footer {
   button[data-action="start"] {
     display: none;
   }
+  a {
+    padding: 0;
+  }
   .slider-controls {
     button {
       padding: 1rem;
@@ -289,18 +292,18 @@ footer.footer {
     }
   }
   .tns-nav {
-    margin-top: 1rem;
     display: flex;
+    margin-top: 1rem;
     min-height: 1rem;
     align-items: center;
     justify-content: center;
     button {
+      padding: 0;
       width: 0.5rem;
       height: 0.5rem;
-      padding: 0;
+      margin: 0 0.5rem;
       border-radius: 50%;
       min-width: initial;
-      margin: 0 0.5rem;
       transition: all ease 0.15;
       background-color: rgba($secondary, .5);
       &.tns-nav-active {
@@ -310,6 +313,16 @@ footer.footer {
       }
     }
   }
+}
+.slbCaption {
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+}
+.slbCloseBtn:hover,
+.slbArrow:hover {
+  color: $accent-yellow;
+  opacity: 1;
 }
 
 #contacts {

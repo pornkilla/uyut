@@ -31,6 +31,50 @@ function displayCurrentYear() {
   return content;
 }
 
+function prepareGalleries() {
+  var slider = tns({
+    container: '.slider-general',
+    mouseDrag: true,
+    items: 5,
+    slideBy: 1,
+    swipeAngle: false,
+    autoplay: true,
+    controlsPosition: 'bottom',
+    navPosition: 'bottom',
+    controlsContainer: ".slider-controls",
+    speed: 400,
+    gutter: 16,
+    responsive: {
+      320: {
+        items: 2
+      },
+      480: {
+        items: 3
+      },
+      768: {
+        items: 4
+      },
+      1280: {
+        items: 5
+      }
+    },
+    center: true,
+    preventScrollOnTouch: true,
+  });
+}
+
+function prepareLightBoxes() {
+  Object.assign(SimpleLightbox.defaults, {
+    closeBtnCaption: 'Закрыть',
+    nextBtnCaption: 'Следующий слайд',
+    prevBtnCaption: 'Предыдущий слайд',
+    loadingCaption: 'Загрузка...',
+  });
+  new window.SimpleLightbox({
+    elements: '#gallery a'
+  });
+}
+
 function prepareYandexMap() {
   ymaps.ready(init);
 
@@ -66,5 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
   serveCloseButtons();
   displayCurrentYear();
   prepareYandexMap();
+  prepareGalleries();
+  prepareLightBoxes();
 
 }, false);

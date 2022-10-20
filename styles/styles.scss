@@ -58,7 +58,6 @@ body {
 
 a {
   color: $accent-green;
-
   &:hover {
     color: lighten($accent-green, 20);
   }
@@ -107,6 +106,14 @@ section {
 
 .btn, [type=button], [type=reset], [type=submit], button {
   font-family: $font-nunito;
+}
+.btn-info, .btn-success {
+  background-color: $accent-green !important;border-color: transparent !important;
+}
+
+.toast.toast--success {
+  background-color: $accent-green;
+  border-color: $accent-green;
 }
 
 .logo-fill {
@@ -213,6 +220,10 @@ footer.footer {
   }
 }
 
+.modal-footer {
+  border-top: 1px solid lightgray;
+}
+
 .line-title {
   padding-left: 58px;
   position: relative;
@@ -226,18 +237,6 @@ footer.footer {
     left: 0;
     top: 50%;
     
-  }
-}
-
-#header-btn {
-  margin-left: 0;
-}
-
-#gallery {
-  @include bg-whitewood;
-  .slider-box img {
-    width: 100%;
-    height: 33vh;
   }
 }
 
@@ -314,6 +313,7 @@ footer.footer {
     }
   }
 }
+
 .slbCaption {
   @media screen and (max-width: 768px) {
     font-size: 0.75rem;
@@ -323,6 +323,18 @@ footer.footer {
 .slbArrow:hover {
   color: $accent-yellow;
   opacity: 1;
+}
+
+#header-btn {
+  margin-left: 0;
+}
+
+#gallery {
+  @include bg-whitewood;
+  .slider-box img {
+    width: 100%;
+    height: 33vh;
+  }
 }
 
 #contacts {

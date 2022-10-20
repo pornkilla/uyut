@@ -181,12 +181,24 @@
       </div>
     </section>
 
-    <section class="colors-biege u-flex u-justify-center u-items-center">
+    <section id="call-me" class="colors-biege u-flex u-justify-center u-items-center">
       <div class="content w-80p py-6 u-text-center">
         <h2 class="mb-3">Остались вопросы?</h2>
         <p class="lead mb-5">Мы будем рады на них ответить по телефону.</p>
+        <a href="#call-me-modal" class="outline btn btn-light btn--lg u-round-none">Перезвоните мне</a>
+        
+        <div class="toast toast--success" data-target="close">
+          <button class="btn-close"></button>
+          <h3>Спасибо за отклик</h3>
+          <p class="mb-2">Ваш запрос был успешно отправлен нашему администратору. Ожидайте звонка.</p>
+        </div>
 
-        <button class="outline btn-light btn--lg u-round-none">Перезвоните мне</button>
+        <div class="toast toast--error" data-target="close">
+          <button class="btn-close"></button>
+          <h3>Произошла ошибка</h3>
+          <p class="mb-2">К сожалению, Ваш запрос отправить не удалось... Попробуйте повторить отправку снова.</p>
+        </div>
+
       </div>
     </section>
   </main>
@@ -211,7 +223,7 @@
       <div class="divider"></div>
 
       <div class="row py-5">
-        <div class="col-4">
+        <div class="col-2">
           <ul class="no-bullets menu">
             <li class="list-item">
               <a href="#">О НАС</a>
@@ -222,7 +234,7 @@
           </ul>
         </div>
 
-        <div class="col-4">
+        <div class="col-2">
           <ul class="no-bullets menu">
             <li class="list-item">
               <a href="#">ФОТО</a>
@@ -232,6 +244,8 @@
             </li>
           </ul>
         </div>
+
+        <div class="col-4"></div>
 
         <div class="col-4">
           <ul class="no-bullets menu tight">
@@ -270,6 +284,59 @@
     <button class="btn-close"></button>
     <p class="w-90p">Мы используем файлы cookie, разработанные нашими специалистами и третьими лицами, для анализа событий на нашем веб-сайте, что позволяет нам улучшать взаимодействие с пользователями и обслуживание. Продолжая просмотр страниц нашего сайта, вы принимаете условия его использования. <a href="#">Ознакомиться с деталями</a>.</p>
   </div>
+
+  <div class="modal modal-normal modal-animated--zoom-in" id="call-me-modal">
+    <a href="#call-me" class="modal-overlay close-btn" aria-label="Close">×</a>
+    <div class="modal-content" role="document">
+      <div class="modal-header pl-5 pr-2 u-flex u-items-center">
+        <div class="modal-title u-flex-grow-1">Форма связи</div>
+          <a href="#call-me" class="outline btn m-0 u-round-none" aria-label="Close">
+            <span class="icon text-xl w-auto">×</span>
+          </a>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div class="placeholder">
+            <p class="placeholder-subtitle pb-4">Пожалуйста, укажите Ваши контактные данные</p>
+            <div class="row level">
+              <div class="col-xs-3 level-item">
+                  <p class="m-0">Имя:</p>
+              </div>
+              <div class="col-xs-9 level-item">
+                <input type="name" placeholder="Иван Петрович" value="">
+              </div>
+            </div>
+
+            <div class="row level">
+              <div class="col-xs-3 level-item">
+                  <p class="m-0">Телефон:</p>
+              </div>
+              <div class="col-xs-9 level-item">
+                <input type="tel" placeholder="+7 900 111-22-33" value="">
+              </div>
+            </div>
+
+            <div class="row level">
+              <div class="col-xs-3 level-item"></div>
+              <div class="col-xs-9 level-item u-text-left u-items-baseline">
+                <input id="personal-data-agreement" class="form-ext-input" type="checkbox">
+                <label class="form-ext-label" for="personal-data-agreement">
+                  <small>Я согласен с <a href="https://xn--10-qmcd9c.xn--p1ai/licenses_detail.php" class="underline" target="_blank">правилами обработки персональных данных</a></small>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="modal-footer u-text-right">
+          <a href="#call-me" class="p-0">
+            <button type="submit" class="btn-info btn--sm mb-0 u-inline-block u-round-none">Позвоните мне</button>
+          </a>
+        </div>
+      </form>
+    </div>
+</div>
+
   <script src="js/main.js"></script>
   <script src="js/tiny-slider.min.js"></script>
   <script src="js/simplebox.min.js"></script>

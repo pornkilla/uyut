@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/vendor/cirrus.min.css">
+  <link rel="stylesheet" href="styles/vendor/tiny-slider.css">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -72,26 +73,61 @@
         <p class="py-8">dark test</p>
       </div>
     </section>
+
     <section class="u-flex u-justify-center u-items-center">
       <div class="content">
         <p class="py-8">light test</p>
       </div>
     </section>
-    <section class="colors-biege u-flex u-justify-center u-items-center">
-      <div class="content">
-        <p class="py-8">biege test</p>
-      </div>
-    </section>
+
     <section class="colors-yellow u-flex u-justify-center u-items-center">
       <div class="content">
         <p class="py-8">yellow test</p>
       </div>
     </section>
+
+    <section id="gallery" class="u-flex u-justify-center u-items-center max-w-100p">
+      <div class="u-text-center pt-6">
+        <h2 class="mb-3">Фотогалерея</h2>
+        <div class="slider-box">
+          <div class="slider-general">
+            <div><img class="img-cover" src="images/gallery/general/photo-1.jpg" alt="pic 1"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-2.jpg" alt="pic 2"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-3.jpg" alt="pic 3"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-4.jpg" alt="pic 4"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-5.jpg" alt="pic 5"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-6.jpg" alt="pic 6"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-7.jpg" alt="pic 7"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-8.jpg" alt="pic 8"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-9.jpg" alt="pic 9"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-10.jpg" alt="pic 10"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-11.jpg" alt="pic 11"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-12.jpg" alt="pic 12"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-13.jpg" alt="pic 13"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-14.jpg" alt="pic 14"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-15.jpg" alt="pic 15"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-16.jpg" alt="pic 16"></div>
+            <div><img class="img-cover" src="images/gallery/general/photo-17.jpg" alt="pic 17"></div>
+          </div>
+          <div class="content slider-controls w-80p px-2 u-flex u-justify-space-between">
+            <button class="btn-transparent left btn--lg u-round-none">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path d="M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z"/></svg>
+              <label>Предыдущий<br>слайд</label>
+            </button>
+            <button class="btn-transparent right btn--lg u-round-none">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z"/></svg>
+              <label>Следующий<br>слайд</label>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contacts" class="colors-green u-relative max-w-100p mb-0">
       <div class="row p-0 u-justify-center u-items-stretch">
         <div class="col-6 p-0">
           <div class="address-box my-8">
-            <p class="text-sm line-title">Осталось узнать лишь</p>
+            <p class="text-sm line-title">Осталось лишь узнать</p>
             <h2 class="mb-4">Как нас найти</h2>
             <div class="u-flex u-items-start">
               <div class="icon">
@@ -138,10 +174,18 @@
             </div>              
           </div>
         </div>
-        
         <div class="col-6 p-0 u-overflow-hidden">
           <div id="map"></div>
         </div>
+      </div>
+    </section>
+
+    <section class="colors-biege u-flex u-justify-center u-items-center">
+      <div class="content w-80p py-6 u-text-center">
+        <h2 class="mb-3">Остались вопросы?</h2>
+        <p class="lead mb-5">Мы будем рады на них ответить по телефону.</p>
+
+        <button class="outline btn-light btn--lg u-round-none">Перезвоните мне</button>
       </div>
     </section>
   </main>
@@ -223,11 +267,45 @@
 
   <div id="cookie-disclaimer" data-target="close" class="toast u-fixed u-bottom-0 colors-green w-auto">
     <button class="btn-close"></button>
-    <p class="w-90p mb-2">Мы используем файлы cookie, разработанные нашими специалистами и третьими лицами, для анализа событий на нашем веб-сайте, что позволяет нам улучшать взаимодействие с пользователями и обслуживание. Продолжая просмотр страниц нашего сайта, вы принимаете условия его использования. <a href="#">Ознакомиться с деталями</a>.</p>
+    <p class="w-90p">Мы используем файлы cookie, разработанные нашими специалистами и третьими лицами, для анализа событий на нашем веб-сайте, что позволяет нам улучшать взаимодействие с пользователями и обслуживание. Продолжая просмотр страниц нашего сайта, вы принимаете условия его использования. <a href="#">Ознакомиться с деталями</a>.</p>
   </div>
   <script src="js/main.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU" type="text/javascript"></script>
   <script src="js/tiny-slider.js"></script>
+
+  <script>
+    
+    var slider = tns({
+      container: '.slider-general',
+      mouseDrag: true,
+      items: 5,
+      slideBy: 1,
+      swipeAngle: false,
+      autoplay: true,
+      autoplayResetOnVisibility: true,
+      controlsPosition: 'bottom',
+      navPosition: 'bottom',
+      controlsContainer: ".slider-controls",
+      speed: 400,
+      gutter: 16,
+      responsive: {
+        320: {
+          items: 2
+        },
+        480: {
+          items: 3
+        },
+        768: {
+          items: 4
+        },
+        1280: {
+          items: 5
+        }
+      },
+      center: true,
+      preventScrollOnTouch: true,
+    });
+    </script>
 </body>
 
 </html>

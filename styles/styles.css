@@ -46,6 +46,10 @@ a:hover {
 }
 
 :focus {
+  box-shadow: none;
+}
+
+a:focus, button:focus {
   box-shadow: rgba(49, 106, 99, 0.25) 0 0 2px 3px;
 }
 
@@ -82,6 +86,10 @@ section p, section a {
   font-weight: 200;
 }
 
+.btn, [type=button], [type=reset], [type=submit], button {
+  font-family: "Nunito Sans", sans-serif;
+}
+
 .logo-fill {
   fill: #2d353b;
 }
@@ -91,10 +99,11 @@ header.header {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   min-height: 4.5rem;
+  margin-bottom: 0;
   background-image: url("../images/bg-header.jpg");
   background-position: 0 0;
   background-repeat: repeat-y;
-  margin-bottom: 0;
+  background-size: 100% auto;
 }
 header.header nav {
   font-size: 1.125rem;
@@ -268,6 +277,88 @@ footer.footer .copyright div {
 
 #header-btn {
   margin-left: 0;
+}
+
+#gallery {
+  background-image: url("../images/bg-header.jpg");
+  background-position: 0 0;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+#gallery .slider-box img {
+  width: 100%;
+  height: 33vh;
+}
+
+.slider-box button[data-action=stop],
+.slider-box button[data-action=start] {
+  display: none;
+}
+.slider-box .slider-controls button {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-color: #2d353b;
+}
+.slider-box .slider-controls button label {
+  cursor: pointer;
+  font-size: small;
+  line-height: 1.25;
+}
+@media screen and (max-width: 768px) {
+  .slider-box .slider-controls button label {
+    display: none;
+  }
+}
+.slider-box .slider-controls button.left {
+  flex-direction: row;
+}
+.slider-box .slider-controls button.left label {
+  text-align: left;
+  margin-left: 1rem;
+}
+.slider-box .slider-controls button.right {
+  flex-direction: row-reverse;
+}
+.slider-box .slider-controls button.right label {
+  text-align: right;
+  margin-right: 1rem;
+}
+.slider-box .slider-controls svg {
+  width: 2rem;
+  height: 2rem;
+  border: #2d353b 1px solid;
+}
+@media screen and (max-width: 768px) {
+  .slider-box .slider-controls svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.slider-box .slider-controls svg path {
+  fill: #2d353b;
+}
+.slider-box .tns-nav {
+  margin-top: 1rem;
+  display: flex;
+  min-height: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.slider-box .tns-nav button {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border-radius: 50%;
+  min-width: initial;
+  margin: 0 0.5rem;
+  transition: all ease 0.15;
+  background-color: rgba(146, 144, 118, 0.5);
+}
+.slider-box .tns-nav button.tns-nav-active {
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: #316A63;
 }
 
 #contacts .address-box {

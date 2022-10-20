@@ -45,6 +45,12 @@ $header-logo-width: 9.5rem;
     }
   }
 }
+@mixin bg-whitewood {
+  background-image: url('../images/bg-header.jpg');
+  background-position: 0 0;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
 
 body {
   position: relative;
@@ -59,7 +65,13 @@ a {
 }
 
 :focus {
-  box-shadow: rgba($accent-green, 0.25) 0 0 2px 3px;
+  box-shadow: none;
+}
+
+a, button {
+  &:focus {
+    box-shadow: rgba($accent-green, 0.25) 0 0 2px 3px;
+  }
 }
 
 p {
@@ -67,7 +79,7 @@ p {
 }
 
 h1 {
-  font-size: 3rem; // ?
+  font-size: 3rem;
   @media screen and (min-width: 768px) {
     font-size: 5rem;
   }
@@ -93,6 +105,10 @@ section {
   }
 }
 
+.btn, [type=button], [type=reset], [type=submit], button {
+  font-family: $font-nunito;
+}
+
 .logo-fill {
   fill: $foreground;
 }
@@ -102,10 +118,8 @@ header.header {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   min-height: $header-height;
-  background-image: url('../images/bg-header.jpg');
-  background-position: 0 0;
-  background-repeat: repeat-y;
   margin-bottom: 0;
+  @include bg-whitewood;
   nav {
     font-size: 1.125rem;
     text-transform: uppercase;
@@ -217,6 +231,85 @@ footer.footer {
 
 #header-btn {
   margin-left: 0;
+}
+
+#gallery {
+  @include bg-whitewood;
+  .slider-box img {
+    width: 100%;
+    height: 33vh;
+  }
+}
+
+.slider-box {
+  button[data-action="stop"],
+  button[data-action="start"] {
+    display: none;
+  }
+  .slider-controls {
+    button {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      border-color: $foreground;
+      label {
+        cursor: pointer;
+        font-size: small;
+        line-height: 1.25;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+      &.left {
+        flex-direction: row;
+        label {
+          text-align: left;
+          margin-left: 1rem;
+        }
+      }
+      &.right {
+        flex-direction: row-reverse;
+        label {
+          text-align: right;
+          margin-right: 1rem;
+        }
+      }
+    }
+    svg {
+      width: 2rem;
+      height: 2rem;
+      border: $foreground 1px solid;
+      @media screen and (max-width: 768px) {
+        width: 3rem;
+        height: 3rem;
+      }
+      path {
+        fill: $foreground;
+      }
+    }
+  }
+  .tns-nav {
+    margin-top: 1rem;
+    display: flex;
+    min-height: 1rem;
+    align-items: center;
+    justify-content: center;
+    button {
+      width: 0.5rem;
+      height: 0.5rem;
+      padding: 0;
+      border-radius: 50%;
+      min-width: initial;
+      margin: 0 0.5rem;
+      transition: all ease 0.15;
+      background-color: rgba($secondary, .5);
+      &.tns-nav-active {
+        width: 0.875rem;
+        height: 0.875rem;
+        background-color: $accent-green;
+      }
+    }
+  }
 }
 
 #contacts {

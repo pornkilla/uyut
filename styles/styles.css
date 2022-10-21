@@ -90,7 +90,7 @@ section p, section a {
   font-family: "Nunito Sans", sans-serif;
 }
 
-.btn-info, .btn-success {
+.btn-info, .btn-primary, .btn-success {
   background-color: #316A63 !important;
   border-color: transparent !important;
 }
@@ -98,6 +98,10 @@ section p, section a {
 .toast.toast--success {
   background-color: #316A63;
   border-color: #316A63;
+}
+
+body .toast {
+  z-index: 998;
 }
 
 .logo-fill {
@@ -379,6 +383,142 @@ footer.footer .copyright div {
   margin-left: 0;
 }
 
+#rooms h3 {
+  font-size: 1rem;
+  line-height: 1.47;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Cormorant Garamond", serif;
+}
+#rooms h3::first-letter {
+  font-size: 175%;
+  font-weight: lighter;
+  line-height: 1;
+}
+@media screen and (min-width: 480px) {
+  #rooms h3 {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #rooms h3 {
+    font-weight: 200;
+    font-size: 1.75rem;
+  }
+}
+#rooms .cover {
+  z-index: 1;
+}
+#rooms .cover a {
+  padding: 0;
+}
+#rooms .details {
+  z-index: 2;
+  position: relative;
+  padding: 2rem 2.25rem;
+  background-color: #f5f5f5;
+}
+#rooms .specs {
+  text-align: center;
+}
+#rooms .includes {
+  margin-top: 2rem;
+}
+#rooms .price {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+}
+#rooms .price strong {
+  font-size: 200%;
+  padding-right: 0.5rem;
+  display: inline-block;
+}
+#rooms .book-now-btn {
+  left: 50%;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  position: absolute;
+  color: #f5f5f5;
+  align-items: center;
+  font-size: 1.125rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #316A63;
+  transform: translate(-50%, 50%);
+  overflow: hidden;
+}
+#rooms .book-now-btn:hover::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4) 100%);
+  width: 45px;
+  transform: skewX(-22deg);
+  left: -65%;
+  -webkit-animation-name: blick;
+          animation-name: blick;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+#rooms .book-now-btn span:nth-of-type(1) {
+  margin-right: 0.75rem;
+}
+#rooms .book-now-btn .chevron {
+  width: 1rem;
+}
+#rooms .book-now-btn .chevron::before {
+  left: 0;
+  top: -0.1em;
+  content: "";
+  display: block;
+  transform: rotate(135deg);
+  border-style: solid;
+  border-width: 0.1em 0.1em 0 0;
+  height: 0.5em;
+  position: relative;
+  width: 0.5em;
+}
+#rooms .book-now-btn.active .chevron::before {
+  transform: rotate(315deg);
+  top: 0.15rem;
+}
+#rooms .item {
+  margin: 4rem auto 6rem auto;
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  #rooms .item {
+    padding-right: 28.12%;
+  }
+  #rooms .item:nth-child(odd) {
+    padding-right: 0;
+    padding-left: 28.12%;
+  }
+  #rooms .item:nth-child(odd) .details {
+    left: 0;
+    right: auto;
+  }
+  #rooms .item .details {
+    width: 38%;
+    max-width: 480px;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    padding-bottom: 4rem;
+  }
+  #rooms .item .specs {
+    text-align: left;
+  }
+  #rooms .item .book-now-btn {
+    left: 0;
+    transform: translate(2.25rem, 50%);
+  }
+}
+
 #gallery {
   background-image: url("../images/bg-header.jpg");
   background-position: 0 0;
@@ -431,4 +571,22 @@ footer.footer .copyright div {
   line-height: 1.25;
   font-size: 0.875rem;
   font-weight: 200;
+}
+
+@-webkit-keyframes blick {
+  60% {
+    left: 100%;
+  }
+  to {
+    left: 130%;
+  }
+}
+
+@keyframes blick {
+  60% {
+    left: 100%;
+  }
+  to {
+    left: 130%;
+  }
 }/*# sourceMappingURL=styles.css.map */

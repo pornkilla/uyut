@@ -3,6 +3,9 @@
 
 $header-height: 4.5rem;
 $header-logo-width: 9.5rem;
+$room-details-box-width: 38%;
+$room-details-size-limiter: 480px;
+$room-details-box-gap: $room-details-box-width * 0.74;
 
 @mixin abs-box {
   top: 0;
@@ -11,7 +14,6 @@ $header-logo-width: 9.5rem;
     bottom: 0;
     position: absolute;
 }
-
 @mixin logo($top-position) {
   left: 0;
   right: 0;
@@ -107,13 +109,18 @@ section {
 .btn, [type=button], [type=reset], [type=submit], button {
   font-family: $font-nunito;
 }
-.btn-info, .btn-success {
-  background-color: $accent-green !important;border-color: transparent !important;
+.btn-info, .btn-primary, .btn-success {
+  background-color: $accent-green !important;
+  border-color: transparent !important;
 }
 
 .toast.toast--success {
   background-color: $accent-green;
   border-color: $accent-green;
+}
+
+body .toast {
+  z-index: 998;
 }
 
 .logo-fill {
@@ -329,6 +336,137 @@ footer.footer {
   margin-left: 0;
 }
 
+#rooms {
+  h3 {
+    font-size: 1rem;
+    line-height: 1.47;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: $font-cormorant;
+    &::first-letter {
+      font-size: 175%;
+      font-weight: lighter;
+      line-height: 1;
+    }    
+    @media screen and (min-width: 480px) {
+      font-size: 1.25rem;
+    }
+    @media screen and (min-width: 1280px) {
+      font-weight: 200;
+      font-size: 1.75rem;
+    }
+  }
+  .cover {
+    z-index: 1;
+    a {
+      padding: 0;
+    }
+  }
+  .details {
+    z-index: 2;
+    position: relative;
+    padding: 2rem 2.25rem;
+    background-color: $background;    
+  }
+  .specs {
+    text-align: center;
+  }
+  .includes {
+    margin-top: 2rem;
+  }
+  .price {
+    font-family: $font-cormorant;
+    font-size: 1.25rem;
+    strong {
+      font-size: 200%;
+      padding-right: 0.5rem;
+      display: inline-block;
+    }
+  }
+  .book-now-btn {
+    left: 50%;
+    bottom: 0;
+    z-index: 3;
+    display: flex;
+    position: absolute;
+    color: $background;
+    align-items: center;
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+    background-color: $accent-green;
+    transform: translate(-50%,50%);
+    overflow: hidden;
+    &:hover::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      bottom: -50%;
+      background: linear-gradient(90deg,rgba(255,255,255,0.1),rgba(255,255,255,0.4) 100%);
+      width: 45px;
+      transform: skewX(-22deg);
+      left: -65%;
+      animation-name: blick;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+    span:nth-of-type(1) {
+      margin-right: 0.75rem;
+    }
+    .chevron {
+      width: 1rem;
+      &::before {
+        left: 0;
+        top: -0.1em;
+        content: '';
+        display: block;
+        transform: rotate(135deg);
+        border-style: solid;
+        border-width: 0.1em 0.1em 0 0;
+        height: 0.5em;
+        position: relative;
+        width: 0.5em;
+      }
+    }
+    &.active {
+      .chevron::before {
+        transform: rotate(315deg);
+        top: 0.15rem;
+      } 
+    }
+  }
+  .item {
+    margin: 4rem auto 6rem auto;
+    position: relative;
+    @media screen and (min-width: 1024px) {
+      padding-right: $room-details-box-gap;
+      &:nth-child(odd) {
+        padding-right: 0;
+        padding-left: $room-details-box-gap;
+        .details {
+          left: 0;
+          right: auto;
+        } 
+      }
+      .details {
+        width: $room-details-box-width;
+        max-width: $room-details-size-limiter;
+        position: absolute;
+        top: 2rem;
+        right: 0;
+        padding-bottom: 4rem;
+      }      
+      .specs {
+        text-align: left;
+      }
+      .book-now-btn {
+        left: 0;
+        transform: translate(2.25rem, 50%);
+      }
+    }
+  }
+}
+
 #gallery {
   @include bg-whitewood;
   .slider-box img {
@@ -379,5 +517,15 @@ footer.footer {
     line-height: 1.25;
     font-size: 0.875rem;
     font-weight: 200;
+  }
+}
+
+@keyframes blick {
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 130%;
   }
 }

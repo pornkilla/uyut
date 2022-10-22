@@ -419,6 +419,7 @@ footer.footer {
     }
     span:nth-of-type(1) {
       margin-right: 0.75rem;
+      transition: width 0.25s ease;
     }
     .chevron {
       width: 1rem;
@@ -437,6 +438,11 @@ footer.footer {
       }
     }
     &.active {
+      span:nth-of-type(1) {
+        transform: translateX(-500%) scaleX(0);
+        width: 0;
+        margin-right: 0;
+      }
       .chevron::before {
         transform: rotate(315deg);
         top: 0.15rem;
@@ -541,6 +547,31 @@ footer.footer {
     line-height: 1.25;
     font-size: 0.875rem;
     font-weight: 200;
+  }
+}
+
+#hero {
+  background-image: url('../images/hero-1.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $background;
+  strong {
+    color: $accent-yellow;
+  }
+}
+
+#features {
+  background-image: url('../images/fleur.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: auto 150%;
+  @media screen and (min-width: 768px) {
+    background-size: auto 250%;    
+  }
+  .text {
+    line-height: 1.3;
+    text-transform: uppercase;
   }
 }
 

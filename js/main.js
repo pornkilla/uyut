@@ -12,6 +12,32 @@ function serveHeaderNavigation() {
   });
 }
 
+function scrollToEl(element) {
+  element.scrollIntoView({
+    behavior: "smooth", 
+    block: "start"
+  })
+}
+
+function serveBookTeaserButtons() {
+  let btns = document.querySelectorAll('.book-now-btn');
+
+  btns.forEach(function (el) {
+    el.addEventListener('click', function () {
+      let parent = el.parentNode.parentNode;
+      let details = el.parentNode;
+      let nextElement = parent.nextSibling.nextSibling;
+      el.classList.toggle('active');
+      el.classList.toggle('scrollable');
+      details.classList.add('bounceInDown');     
+      parent.classList.toggle('active');
+      if (!el.classList.contains('scrollable')) {
+        setTimeout(scrollToEl, 200, nextElement);
+      }
+    });
+  });
+}
+
 function serveCloseButtons() {
   let closeBtns = document.querySelectorAll('.btn-close');
 
@@ -107,6 +133,7 @@ function prepareYandexMap() {
 
 document.addEventListener('DOMContentLoaded', function () {
   serveHeaderNavigation();
+  serveBookTeaserButtons();
   serveCloseButtons();
   displayCurrentYear();
   prepareYandexMap();

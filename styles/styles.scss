@@ -1,5 +1,6 @@
 @import 'helpers';
 @import 'fonts';
+@import 'animations';
 
 $header-height: 4.5rem;
 $header-logo-width: 9.5rem;
@@ -100,6 +101,11 @@ h1, h2 {
   font-family: $font-cormorant;
 }
 
+main {
+  z-index: 1;
+  position: relative;
+}
+
 section {
   p, a {
     font-weight: 200;
@@ -123,8 +129,13 @@ body .toast {
   z-index: 998;
 }
 
+
 .logo-fill {
   fill: $foreground;
+}
+
+.fill-background {
+  fill: $background;
 }
 
 header.header {
@@ -319,6 +330,10 @@ footer.footer {
       }
     }
   }
+  .tns-outer,
+  .tns-inner {
+    max-width: calc(100vw - 1px);
+  }
 }
 
 .slbCaption {
@@ -334,6 +349,190 @@ footer.footer {
 
 #header-btn {
   margin-left: 0;
+}
+
+#hero {
+  background-image: url('../images/hero-1.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $background;
+  strong {
+    color: $accent-yellow;
+  }
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.125;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+    &::before, &::after {
+      opacity: 0.5;
+      position: absolute;
+      top: 28%;
+      content: '';
+      display: block;
+      width: 50px;
+      height: 1px;
+      border-top: $background 1px solid;
+    }
+    span {
+      line-height: 0.9;
+      display: inline-block;
+    }
+    strong {
+      font-weight: 200;
+      font-size: 1.5rem;
+      margin-top: 6vh;
+    }
+    @media screen and (min-width: 480px) {
+      font-size: 2.25rem;
+      strong {
+        font-size: 2.5rem;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 3rem;
+      strong {
+        font-size: 3.75rem;
+      }
+    }
+  }
+  .bottom-line {
+    font-family: $font-cormorant;
+    font-weight: 200;
+    font-size: larger;
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 80vh;
+  }
+}
+
+#welcome {
+  h2 {
+    font-size: 2.5rem;
+  }
+  .col-6 {
+    &:nth-of-type(1) {
+     order: 2;
+    }
+    &:nth-of-type(2) {
+      order: 1;
+    }
+  }
+  .pic {
+    min-height: 320px;
+  }
+  .front {
+    width: 100%;
+    height: 90%;
+    top: 0;
+    left: 0;
+    background-image: url('../images/gallery/general/photo-2.jpg');
+    background-size: auto 100%;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+  }
+  .back {
+    width: 80%;
+    height: 80%;
+    transform: translate(17%, 0);
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/bg-welcome-fleur.jpg');
+    background-size: auto 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  @media screen and (min-width: 480px) {
+    .pic {
+      min-height: 440px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    h2 {
+      font-size: 3.75rem;
+    }
+    .col-6 {
+      &:nth-of-type(1) {
+       order: 1;
+      }
+      &:nth-of-type(2) {
+        order: 2;
+      }
+    }
+    .pic {
+      min-height: 480px;
+    }
+    .back {
+      top: 0;
+      margin: auto;
+      transform: translate(40%, -10%);
+      width: 50%;
+      height: 50%;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .col-6 {
+      &:nth-of-type(1) {
+        width: 40%;
+      }
+      &:nth-of-type(2) {
+        width: 60%;
+        padding-left: 5%;
+      }
+    }
+    .pic {
+      min-height: 640px;
+    }
+    .back {
+      width: 100%;
+      height: 70%;
+      transform: translate(24%, 40%);
+    }
+  }
+  @media screen and (min-width: 1180px) {
+    .back {
+      width: 70%;
+      transform: translate(20%, 40%);
+    }
+  }
+}
+
+#features {
+  background-image: url('../images/fleur.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: auto 150%;
+  @media screen and (min-width: 768px) {
+    background-size: auto 250%;    
+  }
+  .text {
+    line-height: 1.3;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    @media screen and (min-width: 480px) {
+      font-size: 1rem;
+      font-weight: 200;
+    }
+  }
+  .icon {
+    width: 3rem;
+    svg {
+      max-height: 2rem;
+      margin: 0 auto;
+    }
+  }
 }
 
 #rooms {
@@ -400,7 +599,7 @@ footer.footer {
     align-items: center;
     font-size: 1.125rem;
     text-transform: initial;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.375rem;
     background-color: $accent-green;
     transform: translate(-50%,50%);
     overflow: hidden;
@@ -422,7 +621,7 @@ footer.footer {
       transition: width 0.25s ease;
     }
     .chevron {
-      width: 1rem;
+      margin: 0;
       &::before {
         left: 0;
         top: -0.1em;
@@ -531,9 +730,6 @@ footer.footer {
       margin-left: auto;
       margin-right: auto;
       max-height: 1.5rem;
-      path {
-        fill: $background;
-      }
     }
   }
 }
@@ -548,57 +744,4 @@ footer.footer {
     font-size: 0.875rem;
     font-weight: 200;
   }
-}
-
-#hero {
-  background-image: url('../images/hero-1.jpg');
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: $background;
-  strong {
-    color: $accent-yellow;
-  }
-}
-
-#features {
-  background-image: url('../images/fleur.svg');
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: auto 150%;
-  @media screen and (min-width: 768px) {
-    background-size: auto 250%;    
-  }
-  .text {
-    line-height: 1.3;
-    text-transform: uppercase;
-  }
-}
-
-@keyframes blick {
-  60% {
-    left: 100%;
-  }
-
-  to {
-    left: 130%;
-  }
-}
-
-@keyframes bounceInDown {
-  0%,to {
-      animation-timing-function: cubic-bezier(.215,.61,.355,1)
-  }
-
-  0% {
-      transform: translate3d(0,-100px,0) scaleY(1.1)
-  }
-
-  to {
-      transform: translateZ(0)
-  }
-}
-
-.bounceInDown {
-  animation-name: bounceInDown;
 }

@@ -27,6 +27,7 @@ function serveBookTeaserButtons() {
       let parent = el.parentNode.parentNode;
       let details = el.parentNode;
       let nextElement = parent.nextSibling.nextSibling;
+      
       el.classList.toggle('active');
       el.classList.toggle('scrollable');
       details.classList.add('bounceInDown');     
@@ -131,6 +132,21 @@ function prepareYandexMap() {
   }
 }
 
+function stickyScroll() {
+  window.onscroll = function() {stickyHeader()};
+
+  let header = document.querySelector("header");
+  let sticky = header.offsetTop;
+
+  function stickyHeader() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("u-fixed", "u-top-0", "u-z-10");
+    } else {
+      header.classList.remove("u-fixed", "u-top-0", "u-z-10");
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   serveHeaderNavigation();
   serveBookTeaserButtons();
@@ -139,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
   prepareYandexMap();
   prepareGalleries();
   prepareLightBoxes();
+  stickyScroll();
 
 }, false);
 

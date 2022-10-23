@@ -1,0 +1,28 @@
+@keyframes blick {
+    60% {
+      left: 100%;
+    }
+  
+    to {
+      left: 130%;
+    }
+  }
+  
+  @keyframes bounceInDown {
+    0%,to {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1)
+    }
+  
+    0% {
+        transform: translate3d(0,-100px,0) scaleY(1.1)
+    }
+  
+    to {
+        transform: translateZ(0)
+    }
+  }
+  
+  .bounceInDown {
+    animation-name: bounceInDown;
+  }
+  

@@ -1,0 +1,40 @@
+@mixin logo($top-position) {
+    left: 0;
+    right: 0;
+    top: $top-position;
+    padding-top: 0.5rem;
+    height: $header-height;
+    position: absolute;
+    text-align: center;
+    svg {
+      width: $header-logo-width;
+      display: inline-block;
+    }
+    .title {
+      left: 50%;
+      bottom: 0.125rem;
+      transform: translateX(-50%);
+      position: absolute;
+      width: $header-logo-width;
+      .top {
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: 1;
+        font-family: $font-nunito;
+      }
+      .bottom {
+        font-family: $font-cormorant;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+  @mixin bg-whitewood {
+    background-image: url('../images/bg-header.jpg');
+    background-position: 0 0;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+  }
+  

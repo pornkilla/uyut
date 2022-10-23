@@ -1,58 +1,10 @@
 @import 'helpers';
-@import 'fonts';
+@import 'vars';
 @import 'animations';
+@import 'mixins';
 
-$header-height: 4.5rem;
-$header-logo-width: 9.5rem;
-$room-details-box-width: 38%;
-$room-details-size-limiter: 480px;
-$room-details-box-gap: $room-details-box-width * 0.74;
-
-@mixin abs-box {
-  top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-}
-@mixin logo($top-position) {
-  left: 0;
-  right: 0;
-  top: $top-position;
-  padding-top: 0.5rem;
-  height: $header-height;
-  position: absolute;
-  text-align: center;
-  svg {
-    width: $header-logo-width;
-    display: inline-block;
-  }
-  .title {
-    left: 50%;
-    bottom: 0.125rem;
-    transform: translateX(-50%);
-    position: absolute;
-    width: $header-logo-width;
-    .top {
-      font-size: 0.75rem;
-      font-weight: 400;
-      line-height: 1;
-      font-family: $font-nunito;
-    }
-    .bottom {
-      font-family: $font-cormorant;
-      font-size: 1.5rem;
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: 0.1em;
-    }
-  }
-}
-@mixin bg-whitewood {
-  background-image: url('../images/bg-header.jpg');
-  background-position: 0 0;
-  background-repeat: repeat-y;
-  background-size: 100% auto;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -129,6 +81,25 @@ body .toast {
   z-index: 998;
 }
 
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: $accent-green;
+  z-index: 2022;
+  .spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba($background,.3);
+    border-radius: 50%;
+    border-top-color: $background;
+    animation: spin 1s ease-in-out infinite;
+  }
+}
 
 .logo-fill {
   fill: $foreground;
@@ -140,8 +111,7 @@ body .toast {
 
 header.header {
   position: relative;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
   min-height: $header-height;
   margin-bottom: 0;
   @include bg-whitewood;
@@ -153,8 +123,11 @@ header.header {
       padding: 0 0.75rem;
       a {
         padding-bottom: 0;
+        &:hover {
+          color: $accent-green;
+        }
       }
-    }
+    }    
     &.active {
       padding-top: 2rem;
     }
@@ -347,6 +320,25 @@ footer.footer {
   opacity: 1;
 }
 
+.modal {
+  @media screen and (max-width: 480px) {
+    padding: 0;
+    .modal-content {
+      max-width: 100%;
+      height: 100vh;
+      .modal-body {
+        height: calc(100% - 200px);
+        max-height: initial;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+    .placeholder {
+      padding: 1rem;
+    }
+  }
+}
+
 #header-btn {
   margin-left: 0;
 }
@@ -373,14 +365,16 @@ footer.footer {
       right: 0;
     }
     &::before, &::after {
-      opacity: 0.5;
       position: absolute;
-      top: 28%;
+      top: 19%;
       content: '';
       display: block;
       width: 50px;
       height: 1px;
       border-top: $background 1px solid;
+      @media screen and (min-width: 480px) {
+        top: 28%;
+      }
     }
     span {
       line-height: 0.9;
@@ -389,7 +383,7 @@ footer.footer {
     strong {
       font-weight: 200;
       font-size: 1.5rem;
-      margin-top: 6vh;
+      margin-top: 4vh;
     }
     @media screen and (min-width: 480px) {
       font-size: 2.25rem;

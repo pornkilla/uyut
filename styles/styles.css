@@ -90,12 +90,12 @@ body {
     -webkit-transform: rotate(360deg);
   }
 }
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   position: relative;
+}
+
+:focus {
+  box-shadow: none;
 }
 
 a {
@@ -103,10 +103,6 @@ a {
 }
 a:hover {
   color: #52afa4;
-}
-
-:focus {
-  box-shadow: none;
 }
 
 a:focus, button:focus {
@@ -147,6 +143,9 @@ main {
   position: relative;
 }
 
+section a {
+  padding: 0;
+}
 section p, section a {
   font-weight: 200;
 }
@@ -382,6 +381,12 @@ footer.footer .copyright div {
   border-top: 1px solid lightgray;
 }
 
+@media screen and (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
 .line-title {
   padding-left: 58px;
   position: relative;
@@ -400,9 +405,6 @@ footer.footer .copyright div {
 .slider-box button[data-action=stop],
 .slider-box button[data-action=start] {
   display: none;
-}
-.slider-box a {
-  padding: 0;
 }
 .slider-box .slider-controls button {
   padding: 1rem;
@@ -699,12 +701,16 @@ footer.footer .copyright div {
 }
 
 #rooms h3 {
+  margin: 0;
   font-size: 1rem;
   line-height: 1.47;
   font-weight: 600;
-  margin: 0;
   text-transform: uppercase;
   font-family: "Cormorant Garamond", serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 #rooms h3::first-letter {
   font-size: 175%;
@@ -833,11 +839,14 @@ footer.footer .copyright div {
 #rooms .item.active + .more {
   height: auto;
   overflow: visible;
-  padding: 4rem 2.25rem;
+  padding: 0 2.25rem 4rem;
 }
 @media screen and (min-width: 1024px) {
   #rooms .item {
     padding-right: 28.12%;
+  }
+  #rooms .item + .more {
+    text-align: left;
   }
   #rooms .item.left {
     padding-right: 0;
@@ -865,6 +874,9 @@ footer.footer .copyright div {
   #rooms .item .book-now-btn {
     left: 0;
     transform: translate(2.25rem, 50%);
+  }
+  #rooms .item.active .book-now-btn {
+    transform: translate(2.25rem, 0);
   }
 }
 

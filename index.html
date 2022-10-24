@@ -24,7 +24,7 @@
 
   <div class="page-container">
     <div class="overhead colors-biege u-flex u-items-center u-justify-space-between text-sm">
-      <span class="left">Республика Карелия, г. Петрозаводск, ул. Крылова 6</span>
+      <span class="left"><span class="mobile-hidden">Республика Карелия, г.</span> Петрозаводск, ул. Крылова 6</span>
       <span class="right"><a href="tel:+79052999080">+7 (905) 299-90-80 (круглосуточно)</a></span>
     </div>
     <header class="header header-animated">
@@ -55,10 +55,10 @@
       <nav class="header-nav z-lifter" id="header-menu">
         <div class="nav-right">
           <div class="nav-item header-menu-link">
-            <a href="#about">О нас</a>
+            <a data-scroll href="#welcome">О нас</a>
           </div>
           <div class="nav-item header-menu-link">
-            <a href="#rooms">Номера</a>
+            <a data-scroll href="#rooms">Номера</a>
           </div>
         </div>
 
@@ -66,10 +66,10 @@
 
         <div class="nav-left">
           <div class="nav-item header-menu-link">
-            <a href="#photo">Фото</a>
+            <a data-scroll href="#gallery">Фото</a>
           </div>
           <div class="nav-item header-menu-link">
-            <a href="#contacts">Контакты</a>
+            <a data-scroll href="#contacts">Контакты</a>
           </div>
         </div>
       </nav>
@@ -85,7 +85,6 @@
 
       <section id="welcome" class="u-flex u-justify-center u-items-center max-w-100p">
         <div class="content w-80p pt-4">
-          <a name="about"></a>
           <div class="row">
             <div class="col-6">
               <h2 class="mt-6">Добро пожаловать<br>в Уют!</h2>
@@ -159,12 +158,11 @@
 
       <section id="rooms" class="u-flex u-justify-center u-items-center">
         <div class="content w-80p u-text-center pt-6">
-          <a name="rooms"></a>
           <h2>Номера</h2>
 
           <div class="item left">
-            <a name="back-1"></a>
-            <a href="#room-1" class="btn-trigger">
+            <span id="back-1"></span>
+            <a data-scroll href="#room-1" class="btn-trigger">
               <div class="cover">
                 <img src="images/gallery/room-1/photo-06.jpg" alt="Room 1">
               </div>
@@ -182,13 +180,13 @@
             </a>
           </div>
           <div class="more animated fadeIn">
-            <a name="room-1"></a>
-            <p class="pt-10">Подробности заказа</p>
+            <span id="room-1"></span>
+            <h3 class="pt-5">Другие фото номера</h3>
           </div>
 
           <div class="item">
-            <a name="back-2"></a>
-            <a href="#room-2" class="btn-trigger">
+            <span id="back-2"></span>
+            <a data-scroll href="#room-2" class="btn-trigger">
               <div class="cover">
                 <img src="images/gallery/room-2/photo-05.jpg" alt="Room 2">
               </div>
@@ -206,13 +204,13 @@
             </a>
           </div>
           <div class="more">
-            <a name="room-2"></a>
-            <p>Подробности заказа</p>
+            <span id="room-2"></span>
+            <h3 class="pt-5">Другие фото номера</h3>
           </div>
 
           <div class="item left">
-            <a name="back-3"></a>
-            <a href="#room-3" class="btn-trigger">
+            <span id="back-3"></span>
+            <a data-scroll href="#room-3" class="btn-trigger">
               <div class="cover">
                 <img src="images/gallery/room-3/photo-05.jpg" alt="Room 3">
               </div>
@@ -230,13 +228,13 @@
             </a>
           </div>
           <div class="more">
-            <a name="room-3"></a>
-            <p>Подробности заказа</p>
+            <span id="room-3"></span>
+            <h3 class="pt-5">Другие фото номера</h3>
           </div>
 
           <div class="item">
-            <a name="back-4"></a>
-            <a href="#room-4" class="btn-trigger">
+            <span id="back-4"></span>
+            <a data-scroll href="#room-4" class="btn-trigger">
               <div class="cover">
                 <img src="images/gallery/room-4/photo-01.jpg" alt="Room 4">
               </div>
@@ -254,8 +252,8 @@
             </a>
           </div>
           <div class="more">
-            <a name="room-4"></a>
-            <p>Подробности заказа</p>
+            <span id="room-4"></span>
+            <h3 class="pt-5">Другие фото номера</h3>
           </div>
 
         </div>
@@ -263,7 +261,6 @@
 
       <section id="gallery" class="u-flex u-justify-center u-items-center max-w-100p">
         <div class="u-text-center pt-6">
-          <a name="photo"></a>
           <h2 class="mb-3">Фотогалерея</h2>
           <div class="slider-box">
             <div class="slider-general">
@@ -323,7 +320,6 @@
       </section>
 
       <section id="contacts" class="colors-green u-relative max-w-100p mb-0">
-        <a name="contacts"></a>
         <div class="row p-0 u-justify-center u-items-stretch">
           <div class="col-6 p-0">
             <div class="address-box my-8">
@@ -441,10 +437,10 @@
           <div class="col-2">
             <ul class="no-bullets menu">
               <li class="list-item">
-                <a href="#about">О НАС</a>
+                <a data-scroll href="#welcome">О НАС</a>
               </li>
               <li class="list-item">
-                <a href="#rooms">НОМЕРА</a>
+                <a data-scroll href="#rooms">НОМЕРА</a>
               </li>
             </ul>
           </div>
@@ -452,10 +448,10 @@
           <div class="col-2">
             <ul class="no-bullets menu">
               <li class="list-item">
-                <a href="#photo">ФОТО</a>
+                <a data-scroll href="#gallery">ФОТО</a>
               </li>
               <li class="list-item">
-                <a href="#contacts">КОНТАКТЫ</a>
+                <a data-scroll href="#contacts">КОНТАКТЫ</a>
               </li>
             </ul>
           </div>
@@ -558,9 +554,11 @@
   </div>
 
   <script src="js/main.js"></script>
-  <script src="js/tiny-slider.min.js"></script>
-  <script src="js/simplebox.min.js"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU" type="text/javascript"></script>
+  <script defer src="js/vendor/tiny-slider.min.js"></script>
+  <script defer src="js/vendor/simplebox.min.js"></script>
+  <script defer src="js/vendor/smooth-scroll.polyfills.min.js"></script>
+  <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru-RU"></script>
+
 </body>
 
 </html>

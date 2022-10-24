@@ -82,7 +82,7 @@ function displayCurrentYear() {
 }
 
 function prepareGalleries() {
-  var slider = tns({
+  let slider = tns({
     container: '.slider-general',
     mouseDrag: false,
     items: 5,
@@ -156,7 +156,7 @@ function prepareYandexMap() {
   }
 }
 
-function stickyScroll() {
+function serveStickyHeader() {
   window.onscroll = function() {stickyHeader()};
 
   let root = document.querySelector('.page-container');
@@ -182,6 +182,10 @@ function loaderOff() {
   document.body.classList.remove('u-overflow-hidden');
 }
 
+function initSmoothScroll() {
+  let scroll = new SmoothScroll('a[href*="#"]');
+}
+
 document.addEventListener('readystatechange', function () {
   if (document.readyState === 'complete') {
     loaderOff();
@@ -192,7 +196,8 @@ document.addEventListener('readystatechange', function () {
     prepareYandexMap();
     prepareGalleries();
     prepareLightBoxes();
-    stickyScroll();      
+    initSmoothScroll();
+    serveStickyHeader();
   }  
 });
 

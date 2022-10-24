@@ -3,12 +3,12 @@
 @import 'animations';
 @import 'mixins';
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   position: relative;
+}
+
+:focus {
+  box-shadow: none;
 }
 
 a {
@@ -16,10 +16,6 @@ a {
   &:hover {
     color: lighten($accent-green, 20);
   }
-}
-
-:focus {
-  box-shadow: none;
 }
 
 a, button {
@@ -59,6 +55,9 @@ main {
 }
 
 section {
+  a {
+    padding: 0;
+  }
   p, a {
     font-weight: 200;
   }
@@ -229,6 +228,12 @@ footer.footer {
   border-top: 1px solid lightgray;
 }
 
+.mobile-hidden {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
 .line-title {
   padding-left: 58px;
   position: relative;
@@ -249,9 +254,6 @@ footer.footer {
   button[data-action="stop"],
   button[data-action="start"] {
     display: none;
-  }
-  a {
-    padding: 0;
   }
   .slider-controls {
     button {
@@ -545,12 +547,16 @@ footer.footer {
 
 #rooms {
   h3 {
+    margin: 0;
     font-size: 1rem;
     line-height: 1.47;
     font-weight: 600;
-    margin: 0;
     text-transform: uppercase;
     font-family: $font-cormorant;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
     &::first-letter {
       font-size: 175%;
       font-weight: lighter;
@@ -657,7 +663,7 @@ footer.footer {
   }
   .more {
     height: 0;
-    overflow: hidden;    
+    overflow: hidden;
   }
   .item {
     position: relative;
@@ -670,11 +676,14 @@ footer.footer {
       & + .more {
         height: auto;
         overflow: visible;
-        padding: 4rem 2.25rem;
+        padding: 0 2.25rem 4rem;
       }
     }
     @media screen and (min-width: 1024px) {
       padding-right: $room-details-box-gap;
+      & + .more {
+        text-align: left;
+      }
       &.left {
         padding-right: 0;
         padding-left: $room-details-box-gap;
@@ -701,6 +710,9 @@ footer.footer {
       .book-now-btn {
         left: 0;
         transform: translate(2.25rem, 50%);
+      }
+      &.active .book-now-btn {
+        transform: translate(2.25rem, 0);
       }
     }
   }

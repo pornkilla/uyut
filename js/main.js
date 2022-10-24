@@ -10,7 +10,6 @@ function serveHeaderNavigation() {
 
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-      console.log('ggg');
       burger.classList.remove('active');
       burgerMenu.classList.remove('active');
     });
@@ -19,29 +18,48 @@ function serveHeaderNavigation() {
 
 function scrollToEl(element) {
   element.scrollIntoView({
-    behavior: "smooth", 
-    block: "start"
+    behavior: 'smooth', 
+    block: 'start'
   })
 }
 
-function serveBookTeaserButtons() {
-  let btns = document.querySelectorAll('.book-now-btn');
 
-  btns.forEach(function (el) {
-    el.addEventListener('click', function () {
-      let parent = el.parentNode.parentNode;
-      let details = el.parentNode;
-      let nextElement = parent.nextSibling.nextSibling;
+function serveBookTeaserButtons() {
+  let btns = document.querySelectorAll('.btn-trigger');
+
+  btns.forEach(el => {
+    el.addEventListener('click', () => {
+      let parent = el.parentNode;
+      let bookBtn = el.querySelector('.book-now-btn');
+      let hrefIndex = el.getAttribute('href').length ? el.getAttribute('href').slice(-1) : 'bug';
+      let attrHrefBack = '#back-' + hrefIndex;
+      let attrHrefInitial = '#room-' + hrefIndex;
       
-      el.classList.toggle('active');
-      el.classList.toggle('scrollable');
-      details.classList.add('bounceInDown');     
       parent.classList.toggle('active');
-      if (!el.classList.contains('scrollable')) {
-        setTimeout(scrollToEl, 200, nextElement);
+      bookBtn.classList.toggle('active');
+      el.setAttribute('href', attrHrefBack);
+      if (parent.classList.contains('active')) {
+        el.setAttribute('href', attrHrefInitial);
       }
     });
   });
+  // let btns = document.querySelectorAll('.book-now-btn');
+
+  // btns.forEach(function (el) {
+  //   el.addEventListener('click', function () {
+  //     let parent = el.parentNode.parentNode;
+  //     let details = el.parentNode;
+  //     let nextElement = parent.nextSibling.nextSibling;
+      
+  //     el.classList.toggle('active');
+  //     el.classList.toggle('scrollable');
+  //     details.classList.add('bounceInDown');
+  //     parent.classList.toggle('active');
+  //     if (!el.classList.contains('scrollable')) {
+  //       setTimeout(scrollToEl, 200, nextElement);
+  //     }
+  //   });
+  // });
 }
 
 function serveCloseButtons() {
@@ -59,21 +77,22 @@ function serveCloseButtons() {
 
 function displayCurrentYear() {
   let currentYear = new Date().getFullYear();
-  let content = document.querySelector("#currentyear").insertAdjacentHTML('afterbegin', currentYear);
+  let content = document.querySelector('#currentyear').insertAdjacentHTML('afterbegin', currentYear);
   return content;
 }
 
 function prepareGalleries() {
   var slider = tns({
     container: '.slider-general',
-    mouseDrag: true,
+    mouseDrag: false,
     items: 5,
     slideBy: 1,
     swipeAngle: false,
     autoplay: true,
+    autoplayResetOnVisibility: true,
     controlsPosition: 'bottom',
     navPosition: 'bottom',
-    controlsContainer: ".slider-controls",
+    controlsContainer: '.slider-controls',
     speed: 400,
     gutter: 16,
     responsive: {
@@ -111,7 +130,7 @@ function prepareYandexMap() {
   ymaps.ready(init);
 
   function init() {
-    var myMap = new ymaps.Map("map", {
+    var myMap = new ymaps.Map('map', {
       center: [61.785954534328, 34.312319323417],
       zoom: 16
     });
@@ -140,15 +159,20 @@ function prepareYandexMap() {
 function stickyScroll() {
   window.onscroll = function() {stickyHeader()};
 
-  let header = document.querySelector("header");
+  let root = document.querySelector('.page-container');
+  let header = document.querySelector('header');
   let sticky = header.offsetTop;
 
+  function addClasses() {
+    header.classList.add('u-fixed', 'u-top-0', 'u-z-10');
+    root.classList.add('top-offset');
+  };
+  function removeClasses() {
+    header.classList.remove('u-fixed', 'u-top-0', 'u-z-10');
+    root.classList.remove('top-offset');
+  };
   function stickyHeader() {
-    if (window.pageYOffset > sticky) {
-      header.classList.add("u-fixed", "u-top-0", "u-z-10");
-    } else {
-      header.classList.remove("u-fixed", "u-top-0", "u-z-10");
-    }
+    window.pageYOffset > sticky ? addClasses() : removeClasses();
   }
 }
 
@@ -159,7 +183,7 @@ function loaderOff() {
 }
 
 document.addEventListener('readystatechange', function () {
-  if (document.readyState === "complete") {
+  if (document.readyState === 'complete') {
     loaderOff();
     serveHeaderNavigation();
     serveBookTeaserButtons();
@@ -173,7 +197,7 @@ document.addEventListener('readystatechange', function () {
 });
 
 document.addEventListener('keyup', function(e) {
-  if(e.key === "Escape") {
+  if(e.key === 'Escape') {
       const modals = document.querySelectorAll('.modal-overlay');
       for (const modal of modals) {
           modal.click();

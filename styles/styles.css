@@ -190,6 +190,18 @@ body .toast {
           animation: spin 1s ease-in-out infinite;
 }
 
+.page-container.top-offset {
+  margin-top: 72px;
+}
+
+.overhead {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.overhead a {
+  color: #f5f5f5;
+}
+
 .logo-fill {
   fill: #2d353b;
 }
@@ -767,7 +779,6 @@ footer.footer .copyright div {
   bottom: -50%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4) 100%);
   width: 45px;
-  transform: skewX(-22deg);
   left: -65%;
   -webkit-animation-name: blick;
           animation-name: blick;
@@ -812,6 +823,9 @@ footer.footer .copyright div {
 #rooms .item {
   position: relative;
   margin: 4rem auto 6rem auto;
+}
+#rooms .item a {
+  padding: 0;
 }
 #rooms .item.active {
   margin-bottom: 0;

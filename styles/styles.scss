@@ -101,6 +101,20 @@ body .toast {
   }
 }
 
+.page-container {
+  &.top-offset {
+    margin-top: 72px;
+  }
+}
+
+.overhead {
+  padding-left: 10%;
+  padding-right: 10%;
+  a {
+    color: $background;
+  }
+}
+
 .logo-fill {
   fill: $foreground;
 }
@@ -604,7 +618,6 @@ footer.footer {
       bottom: -50%;
       background: linear-gradient(90deg,rgba(255,255,255,0.1),rgba(255,255,255,0.4) 100%);
       width: 45px;
-      transform: skewX(-22deg);
       left: -65%;
       animation-name: blick;
       animation-duration: 2s;
@@ -649,6 +662,9 @@ footer.footer {
   .item {
     position: relative;
     margin: 4rem auto 6rem auto;
+    a {
+      padding: 0;
+    }
     &.active {
       margin-bottom: 0;
       & + .more {

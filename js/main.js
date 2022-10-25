@@ -23,6 +23,19 @@ function scrollToEl(element) {
   })
 }
 
+function serveModal() {
+  let modalBtn = document.querySelector('.call-me-modal');
+  let closeModalBtn = document.querySelector('.modal-close');
+  let modal = document.getElementById('call-me-modal');
+
+  modalBtn.addEventListener('click', () => {
+    modal.classList.toggle('modal--visible');
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('modal--visible');
+  });
+}
 
 function serveBookTeaserButtons() {
   let btns = document.querySelectorAll('.btn-trigger');
@@ -31,35 +44,18 @@ function serveBookTeaserButtons() {
     el.addEventListener('click', () => {
       let parent = el.parentNode;
       let bookBtn = el.querySelector('.book-now-btn');
-      let hrefIndex = el.getAttribute('href').length ? el.getAttribute('href').slice(-1) : 'bug';
-      let attrHrefBack = '#back-' + hrefIndex;
-      let attrHrefInitial = '#room-' + hrefIndex;
+      let hrefIndex = el.getAttribute('href').length ? el.getAttribute('href').slice(-1) : '';
+      let attrHrefTop = '#room-' + hrefIndex;
+      let attrHrefInitial = '#book-' + hrefIndex;
       
       parent.classList.toggle('active');
       bookBtn.classList.toggle('active');
-      el.setAttribute('href', attrHrefBack);
+      el.setAttribute('href', attrHrefTop);
       if (parent.classList.contains('active')) {
         el.setAttribute('href', attrHrefInitial);
       }
     });
   });
-  // let btns = document.querySelectorAll('.book-now-btn');
-
-  // btns.forEach(function (el) {
-  //   el.addEventListener('click', function () {
-  //     let parent = el.parentNode.parentNode;
-  //     let details = el.parentNode;
-  //     let nextElement = parent.nextSibling.nextSibling;
-      
-  //     el.classList.toggle('active');
-  //     el.classList.toggle('scrollable');
-  //     details.classList.add('bounceInDown');
-  //     parent.classList.toggle('active');
-  //     if (!el.classList.contains('scrollable')) {
-  //       setTimeout(scrollToEl, 200, nextElement);
-  //     }
-  //   });
-  // });
 }
 
 function serveCloseButtons() {
@@ -82,7 +78,7 @@ function displayCurrentYear() {
 }
 
 function prepareGalleries() {
-  let slider = tns({
+  const slider1 = tns({
     container: '.slider-general',
     mouseDrag: false,
     items: 5,
@@ -92,7 +88,7 @@ function prepareGalleries() {
     autoplayResetOnVisibility: true,
     controlsPosition: 'bottom',
     navPosition: 'bottom',
-    controlsContainer: '.slider-controls',
+    controlsContainer: '.gal-slider-controls',
     speed: 400,
     gutter: 16,
     responsive: {
@@ -112,6 +108,53 @@ function prepareGalleries() {
     center: true,
     preventScrollOnTouch: true,
   });
+
+  const roomSliderDefaults = {
+    mouseDrag: false,
+    items: 4,
+    slideBy: 1,
+    swipeAngle: false,
+    autoplayResetOnVisibility: true,
+    controlsPosition: 'bottom',
+    navPosition: 'bottom',
+    speed: 400,
+    gutter: 16,
+    responsive: {
+      320: {
+        items: 1
+      },
+      480: {
+        items: 2
+      },
+      768: {
+        items: 3
+      },
+    },
+  }
+  const room1gallery = tns(
+    Object.assign(roomSliderDefaults, {
+      container: '#room-1-gallery',
+      controlsContainer: '.room-1-gallery-controls',
+    })
+  );
+  const room2gallery = tns(
+    Object.assign(roomSliderDefaults, {
+      container: '#room-2-gallery',
+      controlsContainer: '.room-2-gallery-controls',
+    })
+  );
+  const room3gallery = tns(
+    Object.assign(roomSliderDefaults, {
+      container: '#room-3-gallery',
+      controlsContainer: '.room-3-gallery-controls',
+    })
+  );
+  const room4gallery = tns(
+    Object.assign(roomSliderDefaults, {
+      container: '#room-4-gallery',
+      controlsContainer: '.room-4-gallery-controls',
+    })
+  );
 }
 
 function prepareLightBoxes() {
@@ -123,6 +166,18 @@ function prepareLightBoxes() {
   });
   new window.SimpleLightbox({
     elements: '#gallery a'
+  });
+  new window.SimpleLightbox({
+    elements: '#room-1-gallery a'
+  });
+  new window.SimpleLightbox({
+    elements: '#room-2-gallery a'
+  });
+  new window.SimpleLightbox({
+    elements: '#room-3-gallery a'
+  });
+  new window.SimpleLightbox({
+    elements: '#room-4-gallery a'
   });
 }
 
@@ -198,6 +253,7 @@ document.addEventListener('readystatechange', function () {
     prepareLightBoxes();
     initSmoothScroll();
     serveStickyHeader();
+    serveModal();
   }  
 });
 

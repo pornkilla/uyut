@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+  <meta name="msapplication-TileColor" content="#f4ce6d">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#f4ce6d">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +31,7 @@
   </div>
 
   <div class="page-container">
-    <div class="overhead colors-biege u-flex u-items-center u-justify-space-between text-sm">
+    <div class="overhead colors-biege u-flex u-items-center u-justify-space-between text-xs">
       <span class="left"><span class="mobile-hidden">Республика Карелия, г.</span> Петрозаводск, ул. Крылова 6</span>
       <span class="right"><a href="tel:+79052999080">+7 (905) 299-90-80 (круглосуточно)</a></span>
     </div>
@@ -160,9 +168,8 @@
         <div class="content w-80p u-text-center pt-6">
           <h2>Номера</h2>
 
-          <div class="item left">
-            <span id="back-1"></span>
-            <a data-scroll href="#room-1" class="btn-trigger">
+          <div id="room-1" class="item left">
+            <a data-scroll href="#book-1" class="btn-trigger">
               <div class="cover">
                 <img src="images/gallery/room-1/photo-06.jpg" alt="Room 1">
               </div>
@@ -173,20 +180,101 @@
                   <div class="price"><strong>2000 ₽</strong><span>/ сутки</span></div>
                 </div>
                 <button class="book-now-btn">
-                  <span>Забронировать</span>
+                  <span>Детали</span>
                   <span class="chevron"></span>
                 </button>
               </div>
             </a>
           </div>
-          <div class="more animated fadeIn">
-            <span id="room-1"></span>
-            <h3 class="pt-5">Другие фото номера</h3>
+          <div id="book-1" class="more">
+            <h3 class="pt-5 pb-2">Другие фото номера</h3>
+            <div class="slider-box">
+              <div id="room-1-gallery">
+                <div><a href="images/gallery/room-1/photo-01.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-1/photo-01.jpg" alt="Room 1"></a></div>
+                <div><a href="images/gallery/room-1/photo-02.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-1/photo-02.jpg" alt="Room 1"></a></div>
+                <div><a href="images/gallery/room-1/photo-03.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-1/photo-03.jpg" alt="Room 1"></a></div>
+                <div><a href="images/gallery/room-1/photo-04.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-1/photo-04.jpg" alt="Room 1"></a></div>
+                <div><a href="images/gallery/room-1/photo-05.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-1/photo-05.jpg" alt="Room 1"></a></div>
+              </div>
+              <div class="content room-1-gallery-controls slider-arrows w-80p px-2 u-flex u-justify-space-between">
+                <button class="btn-transparent left btn--lg u-round-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                    <use xlink:href="#left-arrow" />
+                  </svg>
+                  <label>Предыдущий<br>слайд</label>
+                </button>
+                <button class="btn-transparent right btn--lg u-round-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                    <use xlink:href="#right-arrow" />
+                  </svg>
+                  <label>Следующий<br>слайд</label>
+                </button>
+              </div>
+            </div>
+            <h3 class="pb-2">Заказать</h3>
+            <p class="lead">Пожалуйста, введите данные для заказа обратного звонка:</p>
+            <form>
+              <div class="placeholder">
+                <div class="row level">
+                  <div class="col-xs-3 level-item">
+                    <p class="m-0"></p>
+                  </div>
+                  <div class="col-xs-9 level-item u-justify-flex-start">
+                    <span class="title text-lg">2-х местный номер с раздельными кроватями и санузлом</span>
+                  </div>
+                </div>
+
+                <div class="row level">
+                  <div class="col-xs-3 level-item">
+                    <p class="m-0">Имя:</p>
+                  </div>
+                  <div class="col-xs-9 level-item">
+                    <input type="name" placeholder="Иван Петрович" value="">
+                  </div>
+                </div>
+
+                <div class="row level">
+                  <div class="col-xs-3 level-item">
+                    <p class="m-0">Телефон: <span class="required">*</span></p>
+                  </div>
+                  <div class="col-xs-9 level-item u-flex-column">
+                    <input type="tel" class="text-danger input-error" placeholder="+7 900 111-22-33" value="">
+                    <div class="u-text-left w-100p"><span class="required info">Обязательно для заполнения</span></div>
+                  </div>
+                </div>
+                
+                <div class="row level">
+                  <div class="col-xs-3 level-item">
+                    <p class="m-0">Комментарий:</p>
+                  </div>
+                  <div class="col-xs-9 level-item">
+                    <textarea name="comment" rows="3" placeholder="Укажите здесь ваш комментарий"></textarea>
+                  </div>
+                </div>
+
+                <div class="row level">
+                  <div class="col-xs-3 level-item"></div>
+                  <div class="col-xs-9 level-item u-items-baseline u-justify-flex-start">
+                    <input id="personal-data-agreement" class="form-ext-input" type="checkbox">
+                    <label class="form-ext-label" for="personal-data-agreement">
+                      <small>Я согласен с <a href="https://xn--10-qmcd9c.xn--p1ai/licenses_detail.php" class="underline"
+                          target="_blank">правилами обработки персональных данных</a></small>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="row level">
+                  <div class="col-xs-3 level-item"></div>
+                  <div class="col-xs-9 level-item u-items-baseline u-justify-flex-start">
+                    <button type="submit" disabled class="btn-primary btn--lg u-round-none">Заказать</button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
 
-          <div class="item">
-            <span id="back-2"></span>
-            <a data-scroll href="#room-2" class="btn-trigger">
+          <div id="room-2" class="item">
+            <a data-scroll href="#book-2" class="btn-trigger">
               <div class="cover">
                 <img src="images/gallery/room-2/photo-05.jpg" alt="Room 2">
               </div>
@@ -196,21 +284,43 @@
                   <p class="includes">В номере: <br>душ, туалет, ТВ, холодильник</p>
                   <div class="price"><strong>2200 ₽</strong><span>/ сутки</span></div>
                 </div>
-                <button class="book-now-btn btn-trigger scrollable">
-                  <span class="animated">Забронировать</span>
+                <button class="book-now-btn">
+                  <span>Детали</span>
                   <span class="chevron"></span>
                 </button>
               </div>
             </a>
           </div>
-          <div class="more">
-            <span id="room-2"></span>
-            <h3 class="pt-5">Другие фото номера</h3>
+          <div id="book-2" class="more">
+            <h3 class="pt-5 pb-2">Другие фото номера</h3>
+            <div class="slider-box">
+              <div id="room-2-gallery">
+                <div><a href="images/gallery/room-2/photo-01.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-2/photo-01.jpg" alt="Room 2"></a></div>
+                <div><a href="images/gallery/room-2/photo-02.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-2/photo-02.jpg" alt="Room 2"></a></div>
+                <div><a href="images/gallery/room-2/photo-03.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-2/photo-03.jpg" alt="Room 2"></a></div>
+                <div><a href="images/gallery/room-2/photo-04.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-2/photo-04.jpg" alt="Room 2"></a></div>
+              </div>
+              <div class="content room-2-gallery-controls slider-arrows w-80p px-2 u-flex u-justify-space-between">
+                <button class="btn-transparent left btn--lg u-round-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                    <use xlink:href="#left-arrow" />
+                  </svg>
+                  <label>Предыдущий<br>слайд</label>
+                </button>
+                <button class="btn-transparent right btn--lg u-round-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                    <use xlink:href="#right-arrow" />
+                  </svg>
+                  <label>Следующий<br>слайд</label>
+                </button>
+              </div>
+            </div>
+            <h3 class="pb-2">Заказать</h3>
+            <div class="frame u-text-center p-4">Форма заказа находится выше, в описании 1 номера</div>
           </div>
 
-          <div class="item left">
-            <span id="back-3"></span>
-            <a data-scroll href="#room-3" class="btn-trigger">
+          <div id="room-3" class="item left">
+            <a data-scroll href="#book-3" class="btn-trigger">
               <div class="cover">
                 <img src="images/gallery/room-3/photo-05.jpg" alt="Room 3">
               </div>
@@ -220,21 +330,43 @@
                   <p class="includes">В номере: <br>душ, туалет, ТВ, холодильник</p>
                   <div class="price"><strong>1600 ₽</strong><span>/ сутки</span></div>
                 </div>
-                <button class="book-now-btn btn-trigger scrollable">
-                  <span>Забронировать</span>
+                <button class="book-now-btn">
+                  <span>Детали</span>
                   <span class="chevron"></span>
                 </button>
               </div>
             </a>
           </div>
-          <div class="more">
-            <span id="room-3"></span>
-            <h3 class="pt-5">Другие фото номера</h3>
+          <div class="more" id="book-3">
+            <h3 class="pt-5 pb-2">Другие фото номера</h3>
+            <div class="slider-box">
+              <div id="room-3-gallery">
+                <div><a href="images/gallery/room-3/photo-01.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-3/photo-01.jpg" alt="Room 3"></a></div>
+                <div><a href="images/gallery/room-3/photo-02.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-3/photo-02.jpg" alt="Room 3"></a></div>
+                <div><a href="images/gallery/room-3/photo-03.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-3/photo-03.jpg" alt="Room 3"></a></div>
+                <div><a href="images/gallery/room-3/photo-04.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-3/photo-04.jpg" alt="Room 3"></a></div>
+              </div>
+              <div class="content room-3-gallery-controls slider-arrows w-80p px-2 u-flex u-justify-space-between">
+                <button class="btn-transparent left btn--lg u-round-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                    <use xlink:href="#left-arrow" />
+                  </svg>
+                  <label>Предыдущий<br>слайд</label>
+                </button>
+                <button class="btn-transparent right btn--lg u-round-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                    <use xlink:href="#right-arrow" />
+                  </svg>
+                  <label>Следующий<br>слайд</label>
+                </button>
+              </div>
+            </div>
+            <h3 class="pb-2">Заказать</h3>
+            <div class="frame u-text-center p-4">Форма заказа находится выше, в описании 1 номера</div>
           </div>
 
-          <div class="item">
-            <span id="back-4"></span>
-            <a data-scroll href="#room-4" class="btn-trigger">
+          <div id="room-4" class="item">
+            <a data-scroll href="#book-4" class="btn-trigger">
               <div class="cover">
                 <img src="images/gallery/room-4/photo-01.jpg" alt="Room 4">
               </div>
@@ -244,16 +376,42 @@
                   <p class="includes">В номере: <br>ТВ, холодильник</p>
                   <div class="price"><strong>1400 ₽</strong><span>/ сутки</span></div>
                 </div>
-                <button class="book-now-btn btn-trigger scrollable">
-                  <span class="animated">Забронировать</span>
+                <button class="book-now-btn">
+                  <span>Детали</span>
                   <span class="chevron"></span>
                 </button>
               </div>
             </a>
           </div>
-          <div class="more">
-            <span id="room-4"></span>
-            <h3 class="pt-5">Другие фото номера</h3>
+          <div id="book-4" class="more">
+            <h3 class="pt-5 pb-2">Другие фото номера</h3>
+            <div class="slider-box">
+              <div id="room-4-gallery">
+                <div><a href="images/gallery/room-4/photo-02.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-4/photo-02.jpg" alt="Room 4"></a></div>
+                <div><a href="images/gallery/room-4/photo-03.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-4/photo-03.jpg" alt="Room 4"></a></div>
+                <div><a href="images/gallery/room-4/photo-04.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-4/photo-04.jpg" alt="Room 4"></a></div>
+                <div><a href="images/gallery/room-4/photo-05.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-4/photo-05.jpg" alt="Room 4"></a></div>
+                <div><a href="images/gallery/room-4/photo-06.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-4/photo-06.jpg" alt="Room 4"></a></div>
+                <div><a href="images/gallery/room-4/photo-07.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-4/photo-07.jpg" alt="Room 4"></a></div>
+                <div><a href="images/gallery/room-4/photo-08.jpg" title="Интерьер номера"><img class="img-cover" src="images/gallery/room-4/photo-08.jpg" alt="Room 4"></a></div>
+              </div>
+              <div class="content room-4-gallery-controls slider-arrows w-80p px-2 u-flex u-justify-space-between">
+                <button class="btn-transparent left btn--lg u-round-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                    <use xlink:href="#left-arrow" />
+                  </svg>
+                  <label>Предыдущий<br>слайд</label>
+                </button>
+                <button class="btn-transparent right btn--lg u-round-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                    <use xlink:href="#right-arrow" />
+                  </svg>
+                  <label>Следующий<br>слайд</label>
+                </button>
+              </div>
+            </div>
+            <h3 class="pb-2">Заказать</h3>
+            <div class="frame u-text-center p-4">Форма заказа находится выше, в описании 1 номера</div>
           </div>
 
         </div>
@@ -299,19 +457,17 @@
               <div><a href="images/gallery/general/photo-17.jpg" title="Интерьер гостиницы — фото 17"><img
                     class="img-cover" src="images/gallery/general/photo-17.jpg" alt="pic 17"></a></div>
             </div>
-            <div class="content slider-controls w-80p px-2 u-flex u-justify-space-between">
+            <div class="content gal-slider-controls slider-arrows w-80p px-2 u-flex u-justify-space-between">
               <button class="btn-transparent left btn--lg u-round-none">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
-                  <path
-                    d="M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z" />
-                  </svg>
+                  <use xlink:href="#left-arrow" />
+                </svg>
                 <label>Предыдущий<br>слайд</label>
               </button>
               <button class="btn-transparent right btn--lg u-round-none">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
-                  <path
-                    d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z" />
-                  </svg>
+                  <use xlink:href="#right-arrow" />
+                </svg>
                 <label>Следующий<br>слайд</label>
               </button>
             </div>
@@ -396,7 +552,7 @@
         <div class="content w-80p py-6 u-text-center">
           <h2 class="mb-3">Остались вопросы?</h2>
           <p class="lead mb-5">Мы будем рады на них ответить по телефону.</p>
-          <a href="#call-me-modal" class="outline btn btn-light btn--lg u-round-none">Перезвоните мне</a>
+          <button class="outline btn-light call-me-modal btn--lg u-round-none">Перезвоните мне</button>
 
           <div class="toast toast--success" data-target="close">
             <button class="btn-close"></button>
@@ -499,12 +655,12 @@
       </p>
     </div>
 
-    <div class="modal modal-normal modal-animated--zoom-in" id="call-me-modal">
-      <a href="#call-me" class="modal-overlay close-btn" aria-label="Close">×</a>
+    <div data-target="close" class="modal modal-normal modal-animated--zoom-in" id="call-me-modal">
+      <a class="modal-overlay btn-close" aria-label="Close"></a>
       <div class="modal-content" role="document">
         <div class="modal-header pl-5 pr-2 u-flex u-items-center">
           <div class="modal-title u-flex-grow-1">Форма связи</div>
-          <a href="#call-me" class="outline btn m-0 u-round-none" aria-label="Close">
+          <a data-scroll href="#call-me" class="outline btn m-0 u-round-none modal-close" aria-label="Close">
             <span class="icon text-xl w-auto">×</span>
           </a>
         </div>
@@ -544,14 +700,24 @@
           </div>
 
           <div class="modal-footer u-text-right">
-            <a href="#call-me" class="p-0">
-              <button type="submit" class="btn-info btn--sm mb-0 u-inline-block u-round-none">Позвоните мне</button>
-            </a>
+            <button type="submit" class="btn-info btn--sm mb-0 u-inline-block u-round-none">Позвоните мне</button>
           </div>
         </form>
       </div>
     </div>
   </div>
+
+  <svg height="0">
+    <g id="left-arrow">
+      <path d="M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z" />
+    </g>
+  </svg>
+
+  <svg height="0">
+    <g id="right-arrow">
+      <path d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z" />
+    </g>
+  </svg>
 
   <script src="js/main.js"></script>
   <script defer src="js/vendor/tiny-slider.min.js"></script>

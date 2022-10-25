@@ -251,11 +251,15 @@ footer.footer {
 }
 
 .slider-box {
+  img {
+    width: 100%;
+    height: 33vh;
+  }
   button[data-action="stop"],
   button[data-action="start"] {
     display: none;
   }
-  .slider-controls {
+  .slider-arrows {
     button {
       padding: 1rem;
       display: flex;
@@ -676,7 +680,7 @@ footer.footer {
       & + .more {
         height: auto;
         overflow: visible;
-        padding: 0 2.25rem 4rem;
+        padding: 0 0 4rem 0;
       }
     }
     @media screen and (min-width: 1024px) {
@@ -700,10 +704,6 @@ footer.footer {
         right: 0;
         padding-bottom: 4rem;
       }
-      &.active .details {
-        bottom: 0;
-        top: auto;
-      }
       .specs {
         text-align: left;
       }
@@ -711,8 +711,17 @@ footer.footer {
         left: 0;
         transform: translate(2.25rem, 50%);
       }
-      &.active .book-now-btn {
-        transform: translate(2.25rem, 0);
+      &.active {
+        & + .more {
+          padding-left: 2.25rem;
+        }
+        .details {
+          bottom: 0;
+          top: auto;
+        }
+        .book-now-btn {
+          transform: translate(2.25rem, 0);
+        }
       }
     }
   }
@@ -720,10 +729,6 @@ footer.footer {
 
 #gallery {
   @include bg-whitewood;
-  .slider-box img {
-    width: 100%;
-    height: 33vh;
-  }
 }
 
 #contacts {
@@ -758,6 +763,7 @@ footer.footer {
 
 #map {
   height: 100%;
+  min-height: 480px;
 }
 
 #cookie-disclaimer {
